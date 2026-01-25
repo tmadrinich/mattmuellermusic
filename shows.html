@@ -38,16 +38,14 @@
       const apiKey = 'AIzaSyBT4GHGzgD9RfWmRQKJqROkhLNj9jJEBeU';
       const maxEvents = 20;
 
-      // Calculate local ISO date/time to handle timezone correctly
-      const now = new Date();
-      const tzOffset = now.getTimezoneOffset() * 60000; // in ms
-      const localISO = new Date(now - tzOffset).toISOString().slice(0, -1); // remove trailing Z
+      // Use UTC ISO string for Google API
+      const timeMin = new Date().toISOString();
 
       const url =
         'https://www.googleapis.com/calendar/v3/calendars/' +
         encodeURIComponent(calendarId) +
         '/events?key=' + apiKey +
-        '&timeMin=' + localISO +
+        '&timeMin=' + timeMin +
         '&singleEvents=true&orderBy=startTime&maxResults=' + maxEvents;
 
       console.log('Fetching Google Calendar URL:', url);
@@ -67,7 +65,7 @@
             return;
           }
 
-          // Filter client-side to remove any past events
+          // Safety filter: remove past events
           const upcomingEvents = data.items.filter(event => {
             const start = new Date(event.start.dateTime || event.start.date);
             return start >= new Date();
@@ -78,6 +76,7 @@
             return;
           }
 
+          // Render events
           container.innerHTML = upcomingEvents.map(event => {
             const start = new Date(event.start.dateTime || event.start.date);
             const date = start.toLocaleDateString('en-US', {
