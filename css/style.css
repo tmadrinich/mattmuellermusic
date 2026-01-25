@@ -164,4 +164,8 @@ footer {
     margin: 0 0.8rem;
   }
 }
+.main-nav a.active {
+  color: #5D72A2;
+  border-bottom: 2px solid #5D72A2;
+}
 
