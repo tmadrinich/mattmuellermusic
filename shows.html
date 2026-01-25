@@ -94,17 +94,17 @@ container.innerHTML = upcomingEvents.map(event => {
   const endTime = end.toLocaleTimeString('en-US', timeOptions);
 
   const title = event.summary || 'Show';
-  const location = event.location ? `@ ${event.location}` : '';
+  const location = event.location || 'Location TBD';
 
   return `
     <div class="event-card">
       <div class="event-title">${title}</div>
-      <div class="event-date">${dateStr}</div>
-      <div class="event-time">${startTime} - ${endTime}</div>
-      ${location ? `<div class="event-location">${location}</div>` : ''}
+      <div class="event-location">${location}</div>
+      <div class="event-time">${dateStr}, ${startTime} - ${endTime}</div>
     </div>
   `;
 }).join('');
+
 
   </script>
 
