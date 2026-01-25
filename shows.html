@@ -28,7 +28,7 @@
 <!-- Google Calendar JS -->
 <script>
 const calendarId = 'ae68da38e08ac4ce31d9d9e455888be40c2f232b12f3a961f180208b79c1a038@group.calendar.google.com'; // Replace with your calendar ID
-const apiKey = 'YOUR_API_KEY'; // Replace with your Google API key
+const apiKey = 'AIzaSyBT4GHGzgD9RfWmRQKJqROkhLNj9jJEBeU'; // Replace with your Google API key
 const maxEvents = 10; // Number of upcoming events to display
 
 fetch(`https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${apiKey}&timeMin=${new Date().toISOString()}&maxResults=${maxEvents}&orderBy=startTime&singleEvents=true`)
