@@ -1,8 +1,10 @@
 // =====================
-// main.js – Load header & footer, mobile nav, active link
+// main.js – Load header & footer, mobile nav, active link, fade
 // =====================
-
 document.addEventListener("DOMContentLoaded", function () {
+  // Fade in page
+  document.body.classList.add("fade-in");
+
   // ---------------------
   // Load Header
   // ---------------------
@@ -13,8 +15,9 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .then((data) => {
       document.getElementById("site-header").innerHTML = data;
-      initNav();          // Initialize mobile nav toggle
+      initNav();           // Initialize mobile nav toggle
       highlightActiveLink(); // Highlight current page
+      initLinkFade();      // Initialize fade on links
     })
     .catch((err) => console.error("Error loading header:", err));
 
@@ -50,7 +53,7 @@ function initNav() {
 // Highlight Active Page
 // =====================
 function highlightActiveLink() {
-  const navLinks = document.querySelectorAll(".main-nav a");
+  const navLinks = document.querySelectorAll(".nav-links a, .main-nav a");
   const current = window.location.pathname.split("/").pop();
 
   navLinks.forEach((link) => {
@@ -60,47 +63,20 @@ function highlightActiveLink() {
     }
   });
 }
-document.addEventListener("DOMContentLoaded", function () {
-  // Load header
-  fetch("partials/header.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("site-header").innerHTML = data;
-      initNav();
-      highlightActiveLink();
-    })
-    .catch(err => console.error("Header load error:", err));
 
-  // Load footer
-  fetch("partials/footer.html")
-    .then(res => res.text())
-    .then(data => document.getElementById("site-footer").innerHTML = data)
-    .catch(err => console.error("Footer load error:", err));
-});
-
-function initNav() {
-  const nav = document.querySelector(".main-nav");
-  const toggle = document.querySelector(".nav-toggle");
-  if (!toggle || !nav) return;
-  toggle.addEventListener("click", () => nav.classList.toggle("open"));
-}
-
-function highlightActiveLink() {
-  const navLinks = document.querySelectorAll(".nav-links a");
-  const current = window.location.pathname.split("/").pop();
-  navLinks.forEach(link => {
-    if (link.getAttribute("href") === current) link.classList.add("active");
-  });
-}
 // =====================
 // Fade on link click
 // =====================
 function initLinkFade() {
-  const internalLinks = document.querySelectorAll("a[href^='./'], a[href$='.html']");
-  internalLinks.forEach(link => {
+  const internalLinks = document.querySelectorAll("a[href$='.html'], a[href^='./']");
+  internalLinks.forEach((link) => {
     link.addEventListener("click", function (e) {
-      e.preventDefault();
       const href = this.getAttribute("href");
+
+      // Ignore external links
+      if (!href || href.startsWith("http")) return;
+
+      e.preventDefault();
 
       // Fade out
       document.body.classList.remove("fade-in");
