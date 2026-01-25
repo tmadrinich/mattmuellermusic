@@ -20,7 +20,7 @@ a {
 }
 
 /* =====================
-   HEADER / NAV
+   HEADER / NAVIGATION
 ===================== */
 .main-nav {
   position: sticky;
@@ -49,12 +49,12 @@ a {
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #C0C0C0;
+  color: #C0C0C0; /* brand silver default */
   transition: color 0.3s;
 }
 
 .nav-links a.active {
-  color: #5D72A2;
+  color: #5D72A2; /* brand blue */
 }
 
 .nav-toggle {
@@ -83,7 +83,7 @@ a {
   content: "";
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0,0,0,0.3); /* lighter overlay */
   z-index: 0;
 }
 
@@ -99,31 +99,32 @@ a {
   margin-bottom: 20px;
 }
 
-/* Music Links */
-.music-links {
+/* =====================
+   HERO MUSIC LINKS (Font Awesome)
+===================== */
+.hero .music-links {
   display: flex;
   justify-content: center;
   gap: 40px;
   margin-top: 20px;
 }
 
-.music-links i {
+.hero .music-links i {
   font-size: 64px;
-  color: #C0C0C0; /* Brand silver default */
+  color: #C0C0C0; /* brand silver */
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-/* Hover colors */
-.spotify-link:hover i {
+/* Hover colors & scale */
+.hero .music-links .spotify-link:hover i {
   color: #1DB954; /* Spotify green */
   transform: scale(1.1);
 }
 
-.apple-link:hover i {
+.hero .music-links .apple-link:hover i {
   color: #FA57C1; /* Apple Music pink/purple */
   transform: scale(1.1);
 }
-
 
 /* =====================
    HOME SECTIONS
@@ -142,6 +143,21 @@ a {
 }
 
 /* =====================
+   INNER PAGES
+===================== */
+.page-content {
+  padding: 80px 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.page-content h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+/* =====================
    FOOTER
 ===================== */
 .site-footer {
@@ -151,21 +167,22 @@ a {
   font-size: 0.9rem;
 }
 
-.footer-social {
+.site-footer .social-links {
   display: flex;
   justify-content: center;
   gap: 20px;
   margin-bottom: 10px;
 }
 
-.footer-social i {
+.site-footer .social-links i {
   font-size: 28px;
-  color: #C0C0C0;
-  transition: color 0.3s;
+  color: #C0C0C0; /* silver */
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.footer-social a:hover i {
-  color: #5D72A2;
+.site-footer .social-links a:hover i {
+  color: #5D72A2; /* brand blue */
+  transform: scale(1.1);
 }
 
 /* =====================
@@ -176,23 +193,5 @@ a {
   .main-nav.open .nav-links { display:flex; }
   .nav-toggle { display:block; }
   .hero-content h2 { font-size:2.2rem; }
-  .music-links i { font-size:48px; }
-}
-/* Footer Social Links */
-.site-footer .social-links {
-  margin-top: 15px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.site-footer .social-links i {
-  font-size: 24px;
-  color: #C0C0C0; /* silver */
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.site-footer .social-links a:hover i {
-  color: #5D72A2; /* brand blue */
-  transform: scale(1.1);
+  .hero .music-links i { font-size:48px; }
 }
