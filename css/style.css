@@ -231,3 +231,6 @@ a {
   font-size: 1rem;
   color: #C0C0C0;
 }
+p {
+  margin-bottom: 20px; /* Adjust this value for more or less space */
+}
