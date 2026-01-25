@@ -18,11 +18,49 @@
   <!-- Shared Header -->
   <div id="site-header"></div>
 
-  <!-- Page Content -->
-  <section class="page-content">
-    <h1>Shows</h1>
-    <p>Check out upcoming tour dates, live performances, and special appearances. Join us for unforgettable experiences filled with music, energy, and connection.</p>
-  </section>
+<section id="calendar-section">
+  <h2>Upcoming Shows</h2>
+  <div id="events-container">
+    <p>Loading upcoming shows...</p>
+  </div>
+</section>
+
+<!-- Google Calendar JS -->
+<script>
+const calendarId = 'YOUR_CALENDAR_ID'; // Replace with your calendar ID
+const apiKey = 'YOUR_API_KEY'; // Replace with your Google API key
+const maxEvents = 10; // Number of upcoming events to display
+
+fetch(`https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${apiKey}&timeMin=${new Date().toISOString()}&maxResults=${maxEvents}&orderBy=startTime&singleEvents=true`)
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById('events-container');
+    if (!data.items || data.items.length === 0) {
+      container.innerHTML = '<p>No upcoming shows.</p>';
+      return;
+    }
+
+    container.innerHTML = data.items.map(event => {
+      const dateObj = new Date(event.start.dateTime || event.start.date);
+      const options = { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' };
+      const date = dateObj.toLocaleDateString('en-US', options);
+      const title = event.summary || 'Show';
+      const location = event.location ? `@ ${event.location}` : '';
+      return `
+        <div class="event-card">
+          <div class="event-date">${date}</div>
+          <div class="event-title">${title}</div>
+          <div class="event-location">${location}</div>
+        </div>
+      `;
+    }).join('');
+  })
+  .catch(err => {
+    console.error(err);
+    document.getElementById('events-container').innerHTML = '<p>Failed to load events.</p>';
+  });
+</script>
+
 
   <!-- Shared Footer -->
   <div id="site-footer"></div>
