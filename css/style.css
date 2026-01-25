@@ -212,15 +212,19 @@ p {
 
 .band-members h2 {
   font-family: 'Oswald', sans-serif;
-  font-size: 2.5rem; /* similar to About h1 */
+  font-size: 2.5rem; /* same as About h1 */
   margin-bottom: 20px;
+  text-align: center; /* same as About */
 }
 
 .band-members p {
   font-family: 'Lato', sans-serif;
   font-size: 1rem;
-  margin-bottom: 20px; /* match spacing between paragraphs */
+  color: #C0C0C0;
+  margin-bottom: 20px; /* same spacing as About */
+  text-align: center; /* match About */
 }
+
 
 /* Grid of images */
 .band-grid {
