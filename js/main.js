@@ -62,7 +62,7 @@ function highlightActiveLink() {
 }
 document.addEventListener("DOMContentLoaded", function () {
   // Load header
-  fetch("/partials/header.html")
+  fetch("partials/header.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("site-header").innerHTML = data;
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch(err => console.error("Header load error:", err));
 
   // Load footer
-  fetch("/partials/footer.html")
+  fetch("partials/footer.html")
     .then(res => res.text())
     .then(data => document.getElementById("site-footer").innerHTML = data)
     .catch(err => console.error("Footer load error:", err));
