@@ -89,7 +89,7 @@ a {
     rgba(0,0,0,0.7),
     rgba(0,0,0,0.7)
   ),
-  url("../assets/hero.jpg") center / cover no-repeat;
+  url("../assets/mattmuellerhero.jpg") center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
