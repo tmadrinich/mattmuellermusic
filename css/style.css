@@ -109,19 +109,21 @@ a {
 
 .music-links i {
   font-size: 64px;
-  color: #C0C0C0;
-  transition: color 0.3s, transform 0.3s;
+  color: #C0C0C0; /* Brand silver default */
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
+/* Hover colors */
 .spotify-link:hover i {
-  color: #1DB954;
+  color: #1DB954; /* Spotify green */
   transform: scale(1.1);
 }
 
-.itunes-link:hover i {
-  color: #FA57C1;
+.apple-link:hover i {
+  color: #FA57C1; /* Apple Music pink/purple */
   transform: scale(1.1);
 }
+
 
 /* =====================
    HOME SECTIONS
