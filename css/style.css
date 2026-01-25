@@ -255,50 +255,46 @@ p {
   border-radius: 8px;
   margin-bottom: 10px;
 }
-/* Calendar Section Styling */
+/* =====================
+   Calendar Section Styling
+===================== */
 #calendar-section {
   padding: 80px 30px;
   max-width: 900px;
   margin: 0 auto;
-}
-
-  padding: 0 20px;
   font-family: 'Lato', sans-serif;
-  color: #000000;
+  color: #C0C0C0;
 }
 
 #calendar-section h2 {
   font-family: 'Oswald', sans-serif;
-  color: #5D72A2; /* Accent Blue */
+  color: #5D72A2; /* Brand Blue */
   text-align: center;
   margin-bottom: 30px;
   font-size: 2em;
 }
 
 .event-card {
-  background: transparent; /* Silver */
+  background: transparent; /* transparent background */
+  padding: 15px 0;
+  border-bottom: 1px solid #5D72A2; /* thin line divider in brand blue */
   margin-bottom: 15px;
-  padding: 15px 20px;
-  border-radius: 8px;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.event-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-.event-date {
-  font-weight: bold;
-  color: #C0C0C0;
 }
 
 .event-title {
-  font-size: 1.2em;
-  color: #C0C0C0;
+  font-size: 1.4em;
+  color: #5D72A2; /* Brand Blue */
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
 .event-location {
-  font-size: 0.9em;
-  color: #5D72A2;
+  font-size: 1em;
+  color: #C0C0C0; /* Silver */
+  margin-bottom: 3px;
+}
+
+.event-time {
+  font-size: 0.95em;
+  color: #C0C0C0; /* Silver */
 }
