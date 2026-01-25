@@ -135,6 +135,13 @@ a {
   transform: scale(1.1);
 }
 
+@media (max-width: 768px) {
+  .music-links i {
+    font-size: 48px;
+  }
+}
+
+
 /* =====================
    HOME SECTIONS
 ===================== */
