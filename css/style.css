@@ -113,9 +113,7 @@ a {
   margin-bottom: 20px;
 }
 
-/* =====================
-   HERO MUSIC LINKS (Font Awesome)
-===================== */
+/* Hero Music Links */
 .music-links {
   display: flex;
   justify-content: center;
@@ -125,7 +123,7 @@ a {
 
 .music-links i {
   font-size: 64px;
-  color: #C0C0C0; /* Brand Silver */
+  color: #C0C0C0; /* silver */
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -138,6 +136,14 @@ a {
   color: #FA57C1; /* Apple Music pink/purple */
   transform: scale(1.1);
 }
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .music-links i {
+    font-size: 48px;
+  }
+}
+
 
 /* =====================
    HOME SECTIONS
