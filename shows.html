@@ -81,31 +81,31 @@
             return;
           }
 
-          // Render events
-          container.innerHTML = upcomingEvents.map(event => {
-            const start = new Date(event.start.dateTime || event.start.date);
-            const date = start.toLocaleDateString('en-US', {
-              weekday: 'short',
-              month: 'short',
-              day: 'numeric',
-              year: 'numeric'
-            });
-            const title = event.summary || 'Show';
-            const location = event.location ? `@ ${event.location}` : '';
-            return `
-              <div class="event-card">
-                <div class="event-date">${date}</div>
-                <div class="event-title">${title}</div>
-                ${location ? `<div class="event-location">${location}</div>` : ''}
-              </div>
-            `;
-          }).join('');
-        })
-        .catch(err => {
-          console.error('Fetch error:', err);
-          document.getElementById('events-container').innerHTML = '<p>Failed to load events.</p>';
-        });
-    });
+         // Render events
+container.innerHTML = upcomingEvents.map(event => {
+  const start = new Date(event.start.dateTime || event.start.date);
+  const end = new Date(event.end.dateTime || event.end.date);
+
+  const dateOptions = { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' };
+  const timeOptions = { hour: '2-digit', minute: '2-digit', hour12: true };
+
+  const dateStr = start.toLocaleDateString('en-US', dateOptions);
+  const startTime = start.toLocaleTimeString('en-US', timeOptions);
+  const endTime = end.toLocaleTimeString('en-US', timeOptions);
+
+  const title = event.summary || 'Show';
+  const location = event.location ? `@ ${event.location}` : '';
+
+  return `
+    <div class="event-card">
+      <div class="event-title">${title}</div>
+      <div class="event-date">${dateStr}</div>
+      <div class="event-time">${startTime} - ${endTime}</div>
+      ${location ? `<div class="event-location">${location}</div>` : ''}
+    </div>
+  `;
+}).join('');
+
   </script>
 
   <!-- Shared Footer -->
