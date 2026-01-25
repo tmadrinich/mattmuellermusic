@@ -22,6 +22,11 @@ body.fade-in {
   opacity: 1;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 /* =====================
    HEADER / NAVIGATION
 ===================== */
@@ -118,7 +123,6 @@ body.fade-in {
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-/* Hover colors & scale */
 .hero .music-links .spotify-link:hover i {
   color: #1DB954; /* Spotify green */
   transform: scale(1.1);
@@ -173,13 +177,13 @@ body.fade-in {
 .site-footer .social-links {
   display: flex;
   justify-content: center;
-  gap: 25px; /* Space between each icon */
+  gap: 25px;
   margin-bottom: 15px;
 }
 
 .site-footer .social-links i {
   font-size: 28px;
-  color: #C0C0C0; /* silver */
+  color: #C0C0C0;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -187,10 +191,10 @@ body.fade-in {
   color: #5D72A2; /* brand blue */
   transform: scale(1.1);
 }
-p {
-  margin-bottom: 20px; /* Adjust this value for more or less space */
-}
 
+p {
+  margin-bottom: 20px;
+}
 
 /* =====================
    MOBILE
@@ -202,34 +206,33 @@ p {
   .hero-content h2 { font-size:2.2rem; }
   .hero .music-links i { font-size:48px; }
 }
+
 /* =====================
    BAND MEMBERS SECTION
 ===================== */
 .band-members {
-  padding: 80px 30px; /* same as .page-content */
-  max-width: 900px; /* match page-content */
+  padding: 80px 30px;
+  max-width: 900px;
   margin: 0 auto;
-  text-align: left; /* match About heading alignment */
-  color: #C0C0C0; /* same text color as About */
+  text-align: left;
+  color: #C0C0C0;
 }
 
 .band-members h2 {
   font-family: 'Oswald', sans-serif;
-  font-size: 2.5rem; /* same as About h1 */
+  font-size: 2.5rem;
   margin-bottom: 20px;
-  text-align: left; /* same as About */
+  text-align: left;
 }
 
 .band-members p {
   font-family: 'Lato', sans-serif;
   font-size: 1rem;
   color: #C0C0C0;
-  margin-bottom: 20px; /* same spacing as About */
-  text-align: left; /* match About */
+  margin-bottom: 20px;
+  text-align: left;
 }
 
-
-/* Grid of images */
 .band-grid {
   display: flex;
   flex-wrap: wrap;
@@ -242,17 +245,13 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 180px; /* fixed square width */
+  width: 180px;
 }
 
 .band-member img {
   width: 100%;
-  height: 180px; /* square images */
+  height: 180px;
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 10px;
-}
-
-body.fade-in {
-  opacity: 1;
 }
