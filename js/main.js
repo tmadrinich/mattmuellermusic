@@ -60,3 +60,35 @@ function highlightActiveLink() {
     }
   });
 }
+document.addEventListener("DOMContentLoaded", function () {
+  // Load header
+  fetch("/partials/header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("site-header").innerHTML = data;
+      initNav();
+      highlightActiveLink();
+    })
+    .catch(err => console.error("Header load error:", err));
+
+  // Load footer
+  fetch("/partials/footer.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("site-footer").innerHTML = data)
+    .catch(err => console.error("Footer load error:", err));
+});
+
+function initNav() {
+  const nav = document.querySelector(".main-nav");
+  const toggle = document.querySelector(".nav-toggle");
+  if (!toggle || !nav) return;
+  toggle.addEventListener("click", () => nav.classList.toggle("open"));
+}
+
+function highlightActiveLink() {
+  const navLinks = document.querySelectorAll(".nav-links a");
+  const current = window.location.pathname.split("/").pop();
+  navLinks.forEach(link => {
+    if (link.getAttribute("href") === current) link.classList.add("active");
+  });
+}
