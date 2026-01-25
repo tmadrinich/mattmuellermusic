@@ -5,7 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Matt Mueller | Home</title>
 
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Lato&family=Oswald&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-papFvP1fT8xOZo+bwF6M6Tx5K0a+nM1c6d6rTHfQh2B+e+KU2v6ZmS3m3gP0VfsI6qXc5c7v9OyG5+qCe2s5dQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- Main CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -13,21 +25,20 @@
   <!-- Shared Header -->
   <div id="site-header"></div>
 
- <!-- Hero Section -->
-<section class="hero">
-  <div class="hero-content">
-    <h2>Listen Now</h2>
-    <div class="music-links">
-      <a href="https://open.spotify.com/artist/yourartistid" target="_blank" class="spotify-link" aria-label="Listen on Spotify">
-        <img src="assets/spotify-logo.svg" alt="Spotify Logo">
-      </a>
-      <a href="https://music.apple.com/artist/yourartistid" target="_blank" class="itunes-link" aria-label="Listen on iTunes">
-        <img src="assets/itunes-logo.svg" alt="iTunes Logo">
-      </a>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Listen Now</h2>
+      <div class="music-links">
+        <a href="https://open.spotify.com/artist/yourartistid" target="_blank" class="spotify-link" aria-label="Listen on Spotify">
+          <i class="fab fa-spotify"></i>
+        </a>
+        <a href="https://music.apple.com/artist/yourartistid" target="_blank" class="itunes-link" aria-label="Listen on Apple Music">
+          <i class="fab fa-apple"></i>
+        </a>
+      </div>
     </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- Home Sections -->
   <section class="home-section">
@@ -51,6 +62,7 @@
   <!-- Shared Footer -->
   <div id="site-footer"></div>
 
+  <!-- Main JS -->
   <script src="js/main.js"></script>
 </body>
 </html>
