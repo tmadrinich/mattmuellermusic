@@ -184,6 +184,10 @@ a {
   color: #5D72A2; /* brand blue */
   transform: scale(1.1);
 }
+p {
+  margin-bottom: 20px; /* Adjust this value for more or less space */
+}
+
 
 /* =====================
    MOBILE
