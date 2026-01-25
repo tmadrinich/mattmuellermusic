@@ -250,3 +250,12 @@ p {
   margin-bottom: 10px;
 }
 
+/* Page fade effect */
+body {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+body.fade-in {
+  opacity: 1;
+}
