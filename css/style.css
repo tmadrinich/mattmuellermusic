@@ -331,3 +331,70 @@ p {
   font-size: 0.95em;
   color: #C0C0C0; /* Silver */
 }
+/* =====================
+   CONTACT FORM
+===================== */
+.page-content form {
+  max-width: 600px;
+  margin: 40px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Labels stack text + input */
+.page-content form label {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+  color: #C0C0C0;
+}
+
+/* Inputs & textarea */
+.page-content form input,
+.page-content form textarea {
+  margin-top: 8px;
+  padding: 12px 14px;
+  background-color: transparent;
+  border: 1px solid #222;
+  border-radius: 6px;
+  color: #C0C0C0;
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+}
+
+/* Focus state */
+.page-content form input:focus,
+.page-content form textarea:focus {
+  outline: none;
+  border-color: #5D72A2; /* brand blue */
+}
+
+/* Textarea resize control */
+.page-content form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Submit button */
+.page-content form button {
+  margin-top: 10px;
+  padding: 14px;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: #5D72A2; /* brand blue */
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Button hover */
+.page-content form button:hover {
+  background-color: #6f86b8;
+  transform: translateY(-1px);
+}
