@@ -59,6 +59,18 @@ header p {
   font-size: 1.2rem;
   color: var(--silver);
 }
+.site-header {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.site-logo {
+  max-width: 240px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
 
 /* Hero Section */
 .hero {
