@@ -26,7 +26,6 @@
   <!-- Shows / Calendar Section -->
   <section id="calendar-section">
     <h2>Upcoming Shows</h2>
-
     <div id="events-container">
       <p>Loading upcoming shows...</p>
     </div>
@@ -34,30 +33,75 @@
 
   <!-- Google Calendar Integration -->
   <script>
-   document.addEventListener('DOMContentLoaded', () => {
-  const calendarId = 'ae68da38e08ac4ce31d9d9e455888be40c2f232b12f3a961f180208b79c1a038@group.calendar.google.com';
-  const apiKey = 'AIzaSyBT4GHGzgD9RfWmRQKJqROkhLNj9jJEBeU';
-  const maxEvents = 10;
+    document.addEventListener('DOMContentLoaded', () => {
+      const calendarId = 'ae68da38e08ac4ce31d9d9e455888be40c2f232b12f3a961f180208b79c1a038@group.calendar.google.com';
+      const apiKey = 'AIzaSyBT4GHGzgD9RfWmRQKJqROkhLNj9jJEBeU';
+      const maxEvents = 20;
 
-  const now = new Date();
-  const tzOffset = now.getTimezoneOffset() * 60000;
-  const localISO = new Date(now - tzOffset).toISOString().slice(0, -1);
+      // Calculate local ISO date/time to handle timezone correctly
+      const now = new Date();
+      const tzOffset = now.getTimezoneOffset() * 60000; // in ms
+      const localISO = new Date(now - tzOffset).toISOString().slice(0, -1); // remove trailing Z
 
-  const url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calendarId)}/events?key=${apiKey}&timeMin=${localISO}&singleEvents=true&orderBy=startTime&maxResults=${maxEvents}`;
+      const url =
+        'https://www.googleapis.com/calendar/v3/calendars/' +
+        encodeURIComponent(calendarId) +
+        '/events?key=' + apiKey +
+        '&timeMin=' + localISO +
+        '&singleEvents=true&orderBy=startTime&maxResults=' + maxEvents;
 
-  console.log('Fetching Google Calendar URL:', url);
+      console.log('Fetching Google Calendar URL:', url);
 
-  fetch(url)
-    .then(res => {
-      console.log('HTTP response status:', res.status);
-      return res.json();
-    })
-    .then(data => {
-      console.log('Raw Google Calendar data:', data);
-    })
-    .catch(err => console.error('Fetch error:', err));
-});
+      fetch(url)
+        .then(res => {
+          console.log('HTTP response status:', res.status);
+          return res.json();
+        })
+        .then(data => {
+          console.log('Raw Google Calendar data:', data);
 
+          const container = document.getElementById('events-container');
+
+          if (!data.items || data.items.length === 0) {
+            container.innerHTML = '<p>No upcoming shows.</p>';
+            return;
+          }
+
+          // Filter client-side to remove any past events
+          const upcomingEvents = data.items.filter(event => {
+            const start = new Date(event.start.dateTime || event.start.date);
+            return start >= new Date();
+          });
+
+          if (upcomingEvents.length === 0) {
+            container.innerHTML = '<p>No upcoming shows.</p>';
+            return;
+          }
+
+          container.innerHTML = upcomingEvents.map(event => {
+            const start = new Date(event.start.dateTime || event.start.date);
+            const date = start.toLocaleDateString('en-US', {
+              weekday: 'short',
+              month: 'short',
+              day: 'numeric',
+              year: 'numeric'
+            });
+            const title = event.summary || 'Show';
+            const location = event.location ? `@ ${event.location}` : '';
+            return `
+              <div class="event-card">
+                <div class="event-date">${date}</div>
+                <div class="event-title">${title}</div>
+                ${location ? `<div class="event-location">${location}</div>` : ''}
+              </div>
+            `;
+          }).join('');
+        })
+        .catch(err => {
+          console.error('Fetch error:', err);
+          document.getElementById('events-container').innerHTML = '<p>Failed to load events.</p>';
+        });
+    });
   </script>
 
   <!-- Shared Footer -->
