@@ -27,8 +27,34 @@
       font-family: 'Lato', sans-serif;
       background-color: var(--black);
       color: var(--silver);
+      scroll-behavior: smooth;
     }
 
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: var(--black);
+      display: flex;
+      justify-content: center;
+      padding: 1rem 0;
+      z-index: 10;
+      border-bottom: 1px solid var(--accent-blue);
+    }
+
+    nav a {
+      color: var(--silver);
+      text-decoration: none;
+      margin: 0 1.5rem;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent-blue);
+    }
+
+    /* Header */
     header {
       text-align: center;
       padding: 2rem 1rem;
@@ -46,6 +72,7 @@
       color: var(--silver);
     }
 
+    /* Hero Section */
     .hero {
       height: 100vh;
       background: url('https://via.placeholder.com/1600x900') center/cover no-repeat;
@@ -95,11 +122,33 @@
       color: var(--black);
     }
 
+    /* Sections */
+    section {
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+
+    section h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2rem;
+      color: var(--accent-blue);
+      margin-bottom: 1.5rem;
+    }
+
+    section p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1rem;
+      color: var(--silver);
+    }
+
+    /* Footer */
     footer {
       text-align: center;
       padding: 2rem 1rem;
       background-color: var(--black);
       color: var(--silver);
+      border-top: 1px solid var(--accent-blue);
     }
 
     @media (max-width: 768px) {
@@ -110,16 +159,30 @@
       .hero-content h2 {
         font-size: 2rem;
       }
+
+      nav a {
+        margin: 0 0.8rem;
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- Navigation -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#media">Media</a>
+    <a href="#shows">Shows</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Header -->
   <header>
     <h1>Matt Mueller</h1>
     <p>Music | Art | Passion</p>
   </header>
 
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
       <h2>Experience the Sound</h2>
@@ -127,6 +190,31 @@
     </div>
   </section>
 
+  <!-- About Section -->
+  <section id="about">
+    <h2>About</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Matt Mueller brings authentic music to life with passion and precision.</p>
+  </section>
+
+  <!-- Media Section -->
+  <section id="media">
+    <h2>Media</h2>
+    <p>Check out videos, recordings, and photos showcasing the music and performances.</p>
+  </section>
+
+  <!-- Shows Section -->
+  <section id="shows">
+    <h2>Shows</h2>
+    <p>Upcoming events and tour dates for Matt Mueller’s live performances.</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Get in touch for bookings, collaborations, or just to say hello! <br>Email: info@mattmueller.com</p>
+  </section>
+
+  <!-- Footer -->
   <footer>
     &copy; 2026 Matt Mueller. All rights reserved.
   </footer>
