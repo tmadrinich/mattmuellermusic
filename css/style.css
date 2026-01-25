@@ -195,3 +195,39 @@ a {
   .hero-content h2 { font-size:2.2rem; }
   .hero .music-links i { font-size:48px; }
 }
+/* Band Members Section */
+.band-members {
+  padding: 60px 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.band-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.band-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 180px;
+}
+
+.band-member img {
+  width: 100%;
+  height: 180px; /* square images */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.band-member p {
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  color: #C0C0C0;
+}
