@@ -1,38 +1,52 @@
-// ============================
-// LOAD HEADER
-// ============================
-fetch('partials/header.html')
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById('site-header').innerHTML = data;
-    initNav();
-    setActiveNav();
-  });
+// =====================
+// Load Header & Footer
+// =====================
+document.addEventListener("DOMContentLoaded", () => {
+  // Load header
+  fetch("/partials/header.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("site-header").innerHTML = html;
+      initNav(); // initialize nav after header loads
+    })
+    .catch(err => console.error("Header load error:", err));
 
-// ============================
-// LOAD FOOTER
-// ============================
-fetch('partials/footer.html')
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById('site-footer').innerHTML = data;
-  });
+  // Load footer
+  fetch("/partials/footer.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("site-footer").innerHTML = html;
+    })
+    .catch(err => console.error("Footer load error:", err));
+});
 
-// ============================
-// SET ACTIVE NAV LINK
-// ============================
-function setActiveNav() {
-  const currentPage =
-    location.pathname.split('/').pop() || 'index.html';
-  const pageName = currentPage.replace('.html', '');
+// =====================
+// Initialize Navigation
+// =====================
+function initNav() {
+  const navToggle = document.querySelector(".nav-toggle");
+  const mainNav = document.querySelector(".main-nav");
 
-  document.querySelectorAll('.main-nav a[data-page]')
-    .forEach(link => {
-      if (link.dataset.page === pageName) {
-        link.classList.add('active');
-      }
+  if (navToggle && mainNav) {
+    navToggle.addEventListener("click", () => {
+      mainNav.classList.toggle("open");
     });
+  }
+
+  // =====================
+  // Highlight Active Page
+  // =====================
+  const navLinks = document.querySelectorAll(".main-nav a");
+  const currentPath = window.location.pathname.split("/").pop();
+
+  navLinks.forEach(link => {
+    const linkPath = link.getAttribute("href");
+    if (linkPath === currentPath || (linkPath === "index.html" && currentPath === "")) {
+      link.classList.add("active");
+    }
+  });
 }
+
 
 // ============================
 // MOBILE NAV TOGGLE
