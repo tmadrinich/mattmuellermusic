@@ -206,7 +206,7 @@ p {
   padding: 80px 30px; /* same as .page-content */
   max-width: 900px; /* match page-content */
   margin: 0 auto;
-  text-align: center; /* match About heading alignment */
+  text-align: left; /* match About heading alignment */
   color: #C0C0C0; /* same text color as About */
 }
 
@@ -214,7 +214,7 @@ p {
   font-family: 'Oswald', sans-serif;
   font-size: 2.5rem; /* same as About h1 */
   margin-bottom: 20px;
-  text-align: center; /* same as About */
+  text-align: left; /* same as About */
 }
 
 .band-members p {
@@ -222,7 +222,7 @@ p {
   font-size: 1rem;
   color: #C0C0C0;
   margin-bottom: 20px; /* same spacing as About */
-  text-align: center; /* match About */
+  text-align: left; /* match About */
 }
 
 
