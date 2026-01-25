@@ -25,10 +25,43 @@
 
   <!-- Page Content -->
   <section class="page-content">
-    <h1>Contact</h1>
-    <p>Get in touch for bookings, collaborations, or just to say hello!</p>
-    <p>Email: <a href="mailto:info@mattmueller.com">info@mattmueller.com</a></p>
-  </section>
+  <h1>Contact</h1>
+
+  <form
+    action="https://api.staticforms.xyz/submit"
+    method="POST"
+  >
+    <!-- StaticForms API Key -->
+    <input type="hidden" name="accessKey" value="sf_2b677jnd12d4ln30cn11952j">
+
+    <!-- Disable captcha -->
+    <input type="hidden" name="captcha" value="false">
+
+    <!-- Honeypot spam protection -->
+    <input type="text" name="honeypot" style="display:none">
+
+    <!-- Redirect after success -->
+    <input type="hidden" name="redirectTo" value="https://mattmuellermusic.com/thank-you.html">
+
+    <label>
+      Name
+      <input type="text" name="name" required>
+    </label>
+
+    <label>
+      Email
+      <input type="email" name="email" required>
+    </label>
+
+    <label>
+      Message
+      <textarea name="message" rows="5" required></textarea>
+    </label>
+
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
 
   <!-- Shared Footer -->
   <div id="site-footer"></div>
