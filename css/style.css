@@ -195,14 +195,30 @@ a {
   .hero-content h2 { font-size:2.2rem; }
   .hero .music-links i { font-size:48px; }
 }
-/* Band Members Section */
+/* =====================
+   BAND MEMBERS SECTION
+===================== */
 .band-members {
-  padding: 60px 30px;
-  max-width: 1000px;
+  padding: 80px 30px; /* same as .page-content */
+  max-width: 900px; /* match page-content */
   margin: 0 auto;
-  text-align: left;
+  text-align: center; /* match About heading alignment */
+  color: #C0C0C0; /* same text color as About */
 }
 
+.band-members h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.5rem; /* similar to About h1 */
+  margin-bottom: 20px;
+}
+
+.band-members p {
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  margin-bottom: 20px; /* match spacing between paragraphs */
+}
+
+/* Grid of images */
 .band-grid {
   display: flex;
   flex-wrap: wrap;
@@ -215,7 +231,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 180px;
+  width: 180px; /* fixed square width */
 }
 
 .band-member img {
@@ -226,11 +242,3 @@ a {
   margin-bottom: 10px;
 }
 
-.band-member p {
-  font-family: 'Lato', sans-serif;
-  font-size: 1rem;
-  color: #C0C0C0;
-}
-p {
-  margin-bottom: 20px; /* Adjust this value for more or less space */
-}
