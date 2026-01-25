@@ -13,6 +13,7 @@ body {
   background-color: #000;
   color: #C0C0C0;
   line-height: 1.6;
+  padding-top: 80px; /* space for sticky header */
 }
 
 a {
@@ -21,20 +22,28 @@ a {
 }
 
 /* =====================
-   NAVIGATION
+   NAVIGATION / HEADER
 ===================== */
 
 .main-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 15px 30px;
+
   background-color: #000;
   border-bottom: 1px solid #222;
+
+  backdrop-filter: blur(6px); /* optional polished look */
 }
 
 .nav-logo img {
   height: 52px;
+  width: auto;
 }
 
 @media (max-width: 768px) {
@@ -42,7 +51,6 @@ a {
     height: 40px;
   }
 }
-
 
 .nav-links {
   display: flex;
