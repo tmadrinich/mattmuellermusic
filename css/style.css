@@ -34,9 +34,15 @@ a {
 }
 
 .nav-logo img {
-  height: 48px;
-  width: auto;
+  height: 52px;
 }
+
+@media (max-width: 768px) {
+  .nav-logo img {
+    height: 40px;
+  }
+}
+
 
 .nav-links {
   display: flex;
