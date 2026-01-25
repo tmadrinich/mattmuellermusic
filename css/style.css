@@ -206,13 +206,39 @@ p {
 /* =====================
    MOBILE
 ===================== */
-@media(max-width:768px) {
-  .nav-links { display:none; flex-direction:column; width:100%; margin-top:20px; gap:15px; }
-  .main-nav.open .nav-links { display:flex; }
-  .nav-toggle { display:block; }
-  .hero-content h2 { font-size:2.2rem; }
-  .hero .music-links i { font-size:48px; }
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;                /* hide by default */
+    flex-direction: column;       /* stack items vertically */
+    position: absolute;           /* dropdown positioning */
+    top: 100%;                    /* directly below the nav bar */
+    right: 30px;                  /* align under hamburger (matches nav padding) */
+    background-color: #000;       /* same as nav background */
+    border: 1px solid #222;       /* optional thin border */
+    border-radius: 8px;           /* optional rounded edges */
+    padding: 10px 20px;           /* spacing inside menu */
+    width: auto;                  /* menu width fits content */
+    z-index: 1001;                /* above other content */
+  }
+
+  .main-nav.open .nav-links {
+    display: flex;                /* show menu when open */
+  }
+
+  .nav-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #C0C0C0;
+    cursor: pointer;
+    position: relative;           /* ensure z-index stacking works */
+  }
+
+  .hero-content h2 { font-size: 2.2rem; }
+  .hero .music-links i { font-size: 48px; }
 }
+
 
 /* =====================
    BAND MEMBERS SECTION
