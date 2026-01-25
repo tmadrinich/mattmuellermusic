@@ -1,35 +1,49 @@
-// Load header
+// ============================
+// LOAD HEADER
+// ============================
 fetch('partials/header.html')
-  .then(res => res.text())
-  .then(html => {
-    document.getElementById('site-header').innerHTML = html;
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('site-header').innerHTML = data;
     initNav();
     setActiveNav();
   });
 
-// Load footer
+// ============================
+// LOAD FOOTER
+// ============================
 fetch('partials/footer.html')
-  .then(res => res.text())
-  .then(html => {
-    document.getElementById('site-footer').innerHTML = html;
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('site-footer').innerHTML = data;
   });
 
+// ============================
+// SET ACTIVE NAV LINK
+// ============================
 function setActiveNav() {
-  const page = location.pathname.split('/').pop() || 'index.html';
-  const pageName = page.replace('.html', '');
+  const currentPage =
+    location.pathname.split('/').pop() || 'index.html';
+  const pageName = currentPage.replace('.html', '');
 
-  document.querySelectorAll('.main-nav a').forEach(link => {
-    if (link.dataset.page === pageName) {
-      link.classList.add('active');
-    }
-  });
+  document.querySelectorAll('.main-nav a[data-page]')
+    .forEach(link => {
+      if (link.dataset.page === pageName) {
+        link.classList.add('active');
+      }
+    });
 }
+
+// ============================
+// MOBILE NAV TOGGLE
+// ============================
 function initNav() {
   const toggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('.main-nav');
+
+  if (!toggle || !nav) return;
 
   toggle.addEventListener('click', () => {
     nav.classList.toggle('open');
   });
 }
-
