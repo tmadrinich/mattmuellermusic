@@ -1,96 +1,51 @@
 // =====================
 // Load Header & Footer
 // =====================
-document.addEventListener("DOMContentLoaded", () => {
-  // Load header
+document.addEventListener("DOMContentLoaded", function () {
+  // Load Header
   fetch("/partials/header.html")
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById("site-header").innerHTML = html;
-      initNav(); // initialize nav after header loads
+    .then((res) => res.text())
+    .then((data) => {
+      document.getElementById("site-header").innerHTML = data;
+      initNav(); // Initialize mobile nav toggle
+      highlightActiveLink(); // Highlight current page
     })
-    .catch(err => console.error("Header load error:", err));
+    .catch((err) => console.error("Error loading header:", err));
 
-  // Load footer
+  // Load Footer
   fetch("/partials/footer.html")
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById("site-footer").innerHTML = html;
+    .then((res) => res.text())
+    .then((data) => {
+      document.getElementById("site-footer").innerHTML = data;
     })
-    .catch(err => console.error("Footer load error:", err));
+    .catch((err) => console.error("Error loading footer:", err));
 });
 
 // =====================
-// Initialize Navigation
+// Mobile Nav Toggle
 // =====================
 function initNav() {
-  const navToggle = document.querySelector(".nav-toggle");
-  const mainNav = document.querySelector(".main-nav");
+  const nav = document.querySelector(".main-nav");
+  const toggle = document.querySelector(".nav-toggle");
 
-  if (navToggle && mainNav) {
-    navToggle.addEventListener("click", () => {
-      mainNav.classList.toggle("open");
-    });
-  }
+  if (!toggle || !nav) return;
 
-  // =====================
-  // Highlight Active Page
-  // =====================
+  toggle.addEventListener("click", () => {
+    nav.classList.toggle("open");
+  });
+}
+
+// =====================
+// Highlight Active Page
+// =====================
+function highlightActiveLink() {
   const navLinks = document.querySelectorAll(".main-nav a");
-  const currentPath = window.location.pathname.split("/").pop();
+  const current = window.location.pathname.split("/").pop();
 
-  navLinks.forEach(link => {
-    const linkPath = link.getAttribute("href");
-    if (linkPath === currentPath || (linkPath === "index.html" && currentPath === "")) {
+  navLinks.forEach((link) => {
+    const href = link.getAttribute("href");
+    if (href === current) {
       link.classList.add("active");
     }
   });
 }
-
-
-// ============================
-// MOBILE NAV TOGGLE
-// ============================
-function initNav() {
-  const toggle = document.querySelector('.nav-toggle');
-  const nav = document.querySelector('.main-nav');
-
-  if (!toggle || !nav) return;
-
-  toggle.addEventListener('click', () => {
-    nav.classList.toggle('open');
-  });
-}
-fetch('partials/header.html')
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById('site-header').innerHTML = data;
-    initNav();
-    setActiveNav();
-  });
-
-fetch('partials/footer.html')
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById('site-footer').innerHTML = data;
-  });
-
-function initNav() {
-  const toggle = document.querySelector('.nav-toggle');
-  const nav = document.querySelector('.main-nav');
-  if (!toggle || !nav) return;
-
-  toggle.addEventListener('click', () => {
-    nav.classList.toggle('open');
-  });
-}
-
-function setActiveNav() {
-  const currentPage = location.pathname.split('/').pop() || 'index.html';
-  const pageName = currentPage.replace('.html','');
-
-  document.querySelectorAll('.main-nav a[data-page]').forEach(link => {
-    if(link.dataset.page === pageName) link.classList.add('active');
-  });
-}
-
