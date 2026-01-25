@@ -276,7 +276,7 @@ p {
 }
 
 .event-card {
-  background: #C0C0C0; /* Silver */
+  background: transparent; /* Silver */
   margin-bottom: 15px;
   padding: 15px 20px;
   border-radius: 8px;
