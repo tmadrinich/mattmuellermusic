@@ -92,3 +92,23 @@ function highlightActiveLink() {
     if (link.getAttribute("href") === current) link.classList.add("active");
   });
 }
+// =====================
+// Fade on link click
+// =====================
+function initLinkFade() {
+  const internalLinks = document.querySelectorAll("a[href^='./'], a[href$='.html']");
+  internalLinks.forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const href = this.getAttribute("href");
+
+      // Fade out
+      document.body.classList.remove("fade-in");
+      document.body.style.opacity = 0;
+
+      setTimeout(() => {
+        window.location.href = href;
+      }, 500); // Match transition duration
+    });
+  });
+}
