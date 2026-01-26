@@ -135,7 +135,7 @@ a {
   color: #1DB954; /* Spotify green */
   transform: scale(1.1);
   text-shadow: 0 0 15px #1DB954;
-  filter: drop-shadow(0 0 5px #1DB954);
+  filter: drop-shadow(0 0 1px #1DB954);
 }
 
 /* Apple Music */
@@ -143,7 +143,7 @@ a {
   color: #FA57C1; /* Apple Music pink/purple */
   transform: scale(1.1);
   text-shadow: 0 0 15px #FA57C1;
-  filter: drop-shadow(0 0 5px #FA57C1);
+  filter: drop-shadow(0 0 1px #FA57C1);
 }
 
 /* YouTube Music */
@@ -151,7 +151,7 @@ a {
   color: #FF0000; /* YouTube red */
   transform: scale(1.1);
   text-shadow: 0 0 15px #FF0000;
-  filter: drop-shadow(0 0 5px #FF0000);
+  filter: drop-shadow(0 0 1px #FF0000);
 }
 
 /* Amazon Music */
@@ -159,7 +159,7 @@ a {
   color: #FF9900; /* Amazon orange */
   transform: scale(1.1);
   text-shadow: 0 0 15px #FF9900;
-  filter: drop-shadow(0 0 5px #FF9900);
+  filter: drop-shadow(0 0 1px #FF9900);
 }
 
 
