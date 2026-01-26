@@ -130,37 +130,35 @@ a {
   transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease, filter 0.3s ease;
 }
 
-/* Spotify */
+/* Subtle Glow Version */
 .hero .music-links .spotify-link:hover i {
   color: #1DB954; /* Spotify green */
   transform: scale(1.1);
-  text-shadow: 0 0 15px #1DB954;
-  filter: drop-shadow(0 0 1px #1DB954);
+  text-shadow: 0 0 6px #1DB954;
+  filter: drop-shadow(0 0 3px #1DB954);
 }
 
-/* Apple Music */
 .hero .music-links .apple-link:hover i {
   color: #FA57C1; /* Apple Music pink/purple */
   transform: scale(1.1);
-  text-shadow: 0 0 15px #FA57C1;
-  filter: drop-shadow(0 0 1px #FA57C1);
+  text-shadow: 0 0 6px #FA57C1;
+  filter: drop-shadow(0 0 3px #FA57C1);
 }
 
-/* YouTube Music */
 .hero .music-links .youtube-link:hover i {
   color: #FF0000; /* YouTube red */
   transform: scale(1.1);
-  text-shadow: 0 0 15px #FF0000;
-  filter: drop-shadow(0 0 1px #FF0000);
+  text-shadow: 0 0 6px #FF0000;
+  filter: drop-shadow(0 0 3px #FF0000);
 }
 
-/* Amazon Music */
 .hero .music-links .amazon-link:hover i {
   color: #FF9900; /* Amazon orange */
   transform: scale(1.1);
-  text-shadow: 0 0 15px #FF9900;
-  filter: drop-shadow(0 0 1px #FF9900);
+  text-shadow: 0 0 6px #FF9900;
+  filter: drop-shadow(0 0 3px #FF9900);
 }
+
 
 
 
