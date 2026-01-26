@@ -130,15 +130,30 @@ a {
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
+/* Spotify */
 .hero .music-links .spotify-link:hover i {
   color: #1DB954; /* Spotify green */
   transform: scale(1.1);
 }
 
+/* Apple Music */
 .hero .music-links .apple-link:hover i {
   color: #FA57C1; /* Apple Music pink/purple */
   transform: scale(1.1);
 }
+
+/* YouTube Music */
+.hero .music-links .youtube-link:hover i {
+  color: #FF0000; /* YouTube red */
+  transform: scale(1.1);
+}
+
+/* Amazon Music */
+.hero .music-links .amazon-link:hover i {
+  color: #FF9900; /* Amazon orange */
+  transform: scale(1.1);
+}
+
 
 /* =====================
    HOME SECTIONS
