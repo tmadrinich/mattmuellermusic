@@ -127,32 +127,41 @@ a {
 .hero .music-links i {
   font-size: 64px;
   color: #C0C0C0; /* brand silver */
-  transition: color 0.3s ease, transform 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease, filter 0.3s ease;
 }
 
 /* Spotify */
 .hero .music-links .spotify-link:hover i {
   color: #1DB954; /* Spotify green */
   transform: scale(1.1);
+  text-shadow: 0 0 15px #1DB954;
+  filter: drop-shadow(0 0 5px #1DB954);
 }
 
 /* Apple Music */
 .hero .music-links .apple-link:hover i {
   color: #FA57C1; /* Apple Music pink/purple */
   transform: scale(1.1);
+  text-shadow: 0 0 15px #FA57C1;
+  filter: drop-shadow(0 0 5px #FA57C1);
 }
 
 /* YouTube Music */
 .hero .music-links .youtube-link:hover i {
   color: #FF0000; /* YouTube red */
   transform: scale(1.1);
+  text-shadow: 0 0 15px #FF0000;
+  filter: drop-shadow(0 0 5px #FF0000);
 }
 
 /* Amazon Music */
 .hero .music-links .amazon-link:hover i {
   color: #FF9900; /* Amazon orange */
   transform: scale(1.1);
+  text-shadow: 0 0 15px #FF9900;
+  filter: drop-shadow(0 0 5px #FF9900);
 }
+
 
 
 /* =====================
