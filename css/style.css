@@ -398,3 +398,16 @@ p {
   background-color: #6f86b8;
   transform: translateY(-1px);
 }
+.embed-wrapper {
+  display: flex;
+  justify-content: center;   /* centers the embed */
+  margin: 40px auto;
+}
+
+.embed-wrapper iframe {
+  width: 90%;                /* flexible width */
+  max-width: 800px;          /* prevents being too wide */
+  min-width: 280px;          /* prevents crushing on mobile */
+  height: 352px;
+  border-radius: 12px;
+}
