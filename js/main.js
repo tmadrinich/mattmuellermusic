@@ -108,3 +108,14 @@ prevBtn.addEventListener('click', () => {
   index = (index - 1 + slides.length) % slides.length;
   updateCarousel();
 });
+let startX = 0;
+
+track.addEventListener('touchstart', e => {
+  startX = e.touches[0].clientX;
+});
+
+track.addEventListener('touchend', e => {
+  const diff = e.changedTouches[0].clientX - startX;
+  if (diff > 50) prevBtn.click();
+  if (diff < -50) nextBtn.click();
+});
