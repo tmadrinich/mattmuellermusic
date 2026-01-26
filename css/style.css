@@ -411,3 +411,8 @@ p {
   height: 352px;
   border-radius: 12px;
 }
+@media (min-width: 900px) {
+  .embed-wrapper iframe {
+    width: 60%;
+  }
+}
