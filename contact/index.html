@@ -80,4 +80,66 @@
       <!-- Disable captcha -->
       <input type="hidden" name="captcha" value="false">
 
-      <!-- Honeypot spam
+      <!-- Honeypot spam protection -->
+      <input type="text" name="honeypot" style="display:none">
+
+      <label>
+        Name
+        <input type="text" name="name" required>
+      </label>
+
+      <label>
+        Email
+        <input type="email" name="email" required>
+      </label>
+
+      <label>
+        Message
+        <textarea name="message" rows="5" required></textarea>
+      </label>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <!-- Thank you message -->
+    <div id="thank-you-message">
+      <p>Thank you for your message! We'll be in touch soon.</p>
+    </div>
+  </section>
+
+  <!-- Shared Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Site Scripts -->
+  <script src="/js/main.js"></script>
+
+  <!-- Contact Form Script -->
+  <script>
+    const form = document.getElementById('contact-form');
+    const thankYou = document.getElementById('thank-you-message');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      fetch('https://api.staticforms.xyz/submit', {
+        method: 'POST',
+        body: formData
+      })
+      .then(res => res.json())
+      .then(data => {
+        // Hide form
+        form.style.display = 'none';
+        // Show thank you
+        thankYou.style.display = 'block';
+      })
+      .catch(err => {
+        console.error('Form submission error:', err);
+        alert('Something went wrong. Please try again.');
+      });
+    });
+  </script>
+
+</body>
+</html>
