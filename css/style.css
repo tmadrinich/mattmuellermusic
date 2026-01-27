@@ -412,21 +412,24 @@ p {
   background-color: #6f86b8;
   transform: translateY(-1px);
 }
+/* Make Spotify embed match carousel width */
 .embed-wrapper {
   display: flex;
-  justify-content: center;   /* center the iframe */
+  justify-content: center;
+  max-width: 900px;   /* same as carousel */
+  width: 100%;
   margin: 40px auto;
-  max-width: 900px;          /* same max-width as carousel */
-  width: 100%;               /* full width on smaller screens */
-  border-radius: 12px;       /* optional: match carousel rounded corners */
-  overflow: hidden;          /* optional: prevent overflow */
+  border-radius: 12px; 
+  overflow: hidden;
 }
 
 .embed-wrapper iframe {
-  width: 100%;               /* fill wrapper width */
-  aspect-ratio: 16 / 9;      /* maintain a 16:9 ratio like carousel images */
+  width: 100% !important;  /* force full width */
+  aspect-ratio: 16 / 9;     /* responsive height */
+  min-height: 352px;        /* optional: same as carousel images */
   border: none;
 }
+
 
 @media (min-width: 900px) {
   .embed-wrapper iframe {
