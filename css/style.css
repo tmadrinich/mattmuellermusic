@@ -469,7 +469,47 @@ p {
 .carousel-btn.prev { left: 10px; }
 .carousel-btn.next { right: 10px; }
 
+/* =====================
+   MEDIA PAGE HERO
+===================== */
 .hero-media {
-  background-image: url('/assets/hero2.jpg');
+  background-image: url('/assets/hero2.jpg?v=2'); /* cache-busting */
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
 }
+
+.hero-media::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.3); /* overlay same as home page */
+  z-index: 0;
+}
+
+.hero-media .hero-content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+.hero-media .hero-content h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 3rem; /* matches index.html */
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6); /* improves visibility over image */
+}
+
+.hero-media .hero-content p {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.5rem; /* similar to home page subtitle */
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+}
+
 
