@@ -468,3 +468,8 @@ p {
 
 .carousel-btn.prev { left: 10px; }
 .carousel-btn.next { right: 10px; }
+
+.hero-media {
+  background-image: url('/assets/hero2.jpg');
+}
+
