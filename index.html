@@ -23,36 +23,60 @@
   <link rel="stylesheet" href="css/style.css">
 
   <style>
-    /* Pre-save Banner */
+    /* =========================
+       PRE-SAVE BANNER
+    ========================== */
     .presave-banner {
       width: 100%;
-      background: linear-gradient(90deg, #b8860b, #d4af37);
-      color: #000;
-      text-align: center;
-      padding: 14px 20px;
-      font-family: 'Oswald', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 600;
-      letter-spacing: 1px;
+      background: #5D72A2;
+      margin-top: 80px; /* pushes below sticky header */
+      transition: all 0.25s ease;
+      position: relative;
+      z-index: 10;
     }
 
     .presave-banner a {
-      color: #000;
+      display: block;
+      width: 100%;
+      padding: 16px 20px;
+
+      text-align: center;
       text-decoration: none;
-      margin-left: 10px;
-      padding: 8px 16px;
-      background: #fff;
-      border-radius: 999px;
-      transition: all 0.2s ease;
-      display: inline-block;
+
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+
+      color: #ffffff;
+      background: #5D72A2;
+
+      border-top: 2px solid #C0C0C0;
+      border-bottom: 2px solid #C0C0C0;
+
+      transition: all 0.25s ease;
     }
 
     .presave-banner a:hover {
-      background: #000;
-      color: #fff;
+      background: #C0C0C0;
+      color: #5D72A2;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .presave-banner {
+        margin-top: 70px;
+      }
+
+      .presave-banner a {
+        font-size: 0.95rem;
+        padding: 14px 12px;
+        line-height: 1.4;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- Shared Header -->
@@ -60,9 +84,8 @@
 
   <!-- Pre-Save Banner -->
   <div class="presave-banner">
-    Pre-Save “In Over My Head” Now
     <a href="https://distrokid.com/hyperfollow/mattmueller1/in-over-my-head?ref=release" target="_blank">
-      Pre-Save
+      PRE-SAVE “IN OVER MY HEAD” NOW
     </a>
   </div>
 
@@ -70,25 +93,46 @@
   <section class="hero">
     <div class="hero-content">
       <h2>Listen Now</h2>
+
       <div class="music-links">
 
         <!-- Spotify -->
-        <a href="https://open.spotify.com/artist/79YZOjggALPQngm5TV6dii" target="_blank" class="spotify-link" aria-label="Listen on Spotify">
+        <a
+          href="https://open.spotify.com/artist/79YZOjggALPQngm5TV6dii"
+          target="_blank"
+          class="spotify-link"
+          aria-label="Listen on Spotify"
+        >
           <i class="fab fa-spotify"></i>
         </a>
 
         <!-- Apple Music -->
-        <a href="https://music.apple.com/artist/matt-mueller/1788445729" target="_blank" class="apple-link" aria-label="Listen on Apple Music">
+        <a
+          href="https://music.apple.com/artist/matt-mueller/1788445729"
+          target="_blank"
+          class="apple-link"
+          aria-label="Listen on Apple Music"
+        >
           <i class="fab fa-apple"></i>
         </a>
 
         <!-- YouTube Music -->
-        <a href="https://youtube.com/@mattmuellermusic?si=ACuVI2WHDuyewpUD" target="_blank" class="youtube-link" aria-label="Listen on YouTube Music">
+        <a
+          href="https://youtube.com/@mattmuellermusic?si=ACuVI2WHDuyewpUD"
+          target="_blank"
+          class="youtube-link"
+          aria-label="Listen on YouTube Music"
+        >
           <i class="fab fa-youtube"></i>
         </a>
 
         <!-- Amazon Music -->
-        <a href="https://music.amazon.com/artists/B07Q57PZ4Q/matt-mueller" target="_blank" class="amazon-link" aria-label="Listen on Amazon Music">
+        <a
+          href="https://music.amazon.com/artists/B07Q57PZ4Q/matt-mueller"
+          target="_blank"
+          class="amazon-link"
+          aria-label="Listen on Amazon Music"
+        >
           <i class="fab fa-amazon"></i>
         </a>
 
@@ -101,5 +145,6 @@
 
   <!-- Main JS -->
   <script src="js/main.js"></script>
+
 </body>
 </html>
