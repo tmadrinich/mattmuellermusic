@@ -262,8 +262,19 @@ p {
     padding-bottom: 24px;
   }
 
-  .hero-content h2 { font-size: 2.2rem; }
-  .hero .music-links i { font-size: 48px; }
+@media (max-width: 768px) {
+  .hero-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 8px; /* was 20px — pulls icons up closer to the title/image */
+  }
+
+  .hero .music-links i {
+    font-size: 48px;
+  }
+
+  .hero .music-links {
+    margin-top: -6px; /* nudge icons up further if still too much space */
+  }
 }
 
 /* =====================
