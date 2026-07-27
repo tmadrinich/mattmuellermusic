@@ -257,7 +257,7 @@ p {
     font-size: 48px;
   }
   .hero .music-links {
-    margin-top: -6px; /* nudge icons up further if still too much space */
+    margin-top: -20px; /* nudge icons up further if still too much space */
   }
 }
 @media (max-width: 768px) {
@@ -267,7 +267,7 @@ p {
     min-height: 0;
     aspect-ratio: 4 / 5; /* swap for your image's actual w/h ratio */
     align-items: flex-end;
-    padding-bottom: 0px;
+    padding-bottom: 24px;
   }
 }
 
