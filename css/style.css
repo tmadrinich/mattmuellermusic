@@ -254,9 +254,9 @@ p {
 }
 @media (max-width: 768px) {
   .hero {
-    background-image: url("/assets/MMATGP-mobile.jpg");
-    background-position: center;
-    background-size: cover;
+    background: url("/assets/MMATGP.jpg") center top / contain no-repeat;
+    background-color: #000;
+    min-height: 100vh;
   }
 }
 
