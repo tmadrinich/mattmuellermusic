@@ -256,8 +256,14 @@ p {
   .hero {
     background: url("/assets/MMATGP.jpg") center top / contain no-repeat;
     background-color: #000;
-    min-height: 100vh;
+    min-height: 0;
+    aspect-ratio: 4 / 5; /* swap for your image's actual w/h ratio */
+    align-items: flex-end;
+    padding-bottom: 24px;
   }
+
+  .hero-content h2 { font-size: 2.2rem; }
+  .hero .music-links i { font-size: 48px; }
 }
 
 /* =====================
