@@ -252,7 +252,13 @@ p {
   .hero-content h2 { font-size: 2.2rem; }
   .hero .music-links i { font-size: 48px; }
 }
-
+@media (max-width: 768px) {
+  .hero {
+    background-image: url("/assets/MMATGP-mobile.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+}
 
 /* =====================
    BAND MEMBERS SECTION
