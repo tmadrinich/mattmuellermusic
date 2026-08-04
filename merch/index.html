@@ -3,71 +3,103 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matt Mueller | Media</title>
-
+  <title>Matt Mueller | Merch</title>
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/assets/mattmuellerlogo.png">
   <link rel="shortcut icon" type="image/png" href="/assets/mattmuellerlogo.png">
-
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Lato&family=Oswald&display=swap" rel="stylesheet">
-
   <!-- Icons -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     crossorigin="anonymous"
   />
-
   <!-- Site Styles -->
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-
   <!-- Shared Header -->
   <div id="site-header"></div>
 
   <!-- Hero Section -->
-  <section class="hero hero-media">
+  <section class="hero hero-merch">
     <div class="hero-content">
-      <h2>Media</h2>
-      <p>Latest Music, Photos & More</p>
+      <h2>Merch</h2>
+      <p>Shirts, Hoodies & More</p>
     </div>
   </section>
 
-  <!-- Latest Releases -->
-<section class="page-content latest-releases">
-  <h1>Latest Releases</h1>
-  <div class="embed-wrapper">
-    <iframe
-      src="https://open.spotify.com/embed/artist/79YZOjggALPQngm5TV6dii"
-      frameborder="0"
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-    </iframe>
-  </div>
-</section>
+  <!-- Merch Grid -->
+  <section class="page-content merch-grid-section">
+    <h1>Shop</h1>
+    <div class="merch-grid">
 
+      <a class="merch-card" href="https://matt-mueller-band.printify.me/product/30472370" target="_blank" rel="noopener">
+        <div class="merch-img-wrap">
+          <img src="/assets/merch-dark-tee.jpg" alt="Support Live Music Dark Text Tee">
+        </div>
+        <div class="merch-info">
+          <span class="merch-name">"Support Live Music" Dark Text Tee</span>
+          <span class="merch-price">$23.00</span>
+        </div>
+      </a>
 
-  <!-- Photos Carousel -->
-  <section class="page-content photos-carousel">
-    <h1>Photos</h1>
-    <div class="carousel">
-      <button class="carousel-btn prev" aria-label="Previous">
-        <i class="fas fa-chevron-left"></i>
-      </button>
+      <a class="merch-card" href="https://matt-mueller-band.printify.me/product/30472349" target="_blank" rel="noopener">
+        <div class="merch-img-wrap">
+          <img src="/assets/merch-light-tee.jpg" alt="Support Live Music Light Text Tee">
+        </div>
+        <div class="merch-info">
+          <span class="merch-name">"Support Live Music" Light Text Tee</span>
+          <span class="merch-price">$23.00</span>
+        </div>
+      </a>
 
-      <div class="carousel-track">
-        <img src="/assets/gallery1.jpg" alt="Recording session 1">
-        <img src="/assets/gallery2.jpg" alt="Recording session 2">
-        <img src="/assets/gallery3.jpg" alt="Recording session 3">
-        <img src="/assets/gallery4.jpg" alt="Recording session 4">
-        <img src="/assets/gallery5.jpg" alt="Recording session 5">
-      </div>
+      <a class="merch-card" href="https://matt-mueller-band.printify.me/product/30472391" target="_blank" rel="noopener">
+        <div class="merch-img-wrap">
+          <img src="/assets/merch-dark-hoodie.jpg" alt="Support Live Music Dark Text Hoodie">
+        </div>
+        <div class="merch-info">
+          <span class="merch-name">"Support Live Music" Dark Text Hoodie</span>
+          <span class="merch-price">$60.00</span>
+        </div>
+      </a>
 
-      <button class="carousel-btn next" aria-label="Next">
-        <i class="fas fa-chevron-right"></i>
-      </button>
+      <a class="merch-card" href="https://matt-mueller-band.printify.me/product/30472416" target="_blank" rel="noopener">
+        <div class="merch-img-wrap">
+          <img src="/assets/merch-light-hoodie.jpg" alt="Support Live Music Light Text Hoodie">
+        </div>
+        <div class="merch-info">
+          <span class="merch-name">"Support Live Music" Light Text Hoodie</span>
+          <span class="merch-price">$60.00</span>
+        </div>
+      </a>
+
+      <a class="merch-card" href="https://matt-mueller-band.printify.me/product/30472444" target="_blank" rel="noopener">
+        <div class="merch-img-wrap">
+          <img src="/assets/merch-can-cooler-new.jpg" alt="Support Live Music Can Cooler">
+        </div>
+        <div class="merch-info">
+          <span class="merch-name">"Support Live Music" Can Cooler</span>
+          <span class="merch-price">$5.00</span>
+        </div>
+      </a>
+
+      <a class="merch-card" href="https://matt-mueller-band.printify.me/product/10461411" target="_blank" rel="noopener">
+        <div class="merch-img-wrap">
+          <img src="/assets/merch-can-cooler.jpg" alt="Can Cooler Matt Mueller Band">
+        </div>
+        <div class="merch-info">
+          <span class="merch-name">Can Cooler</span>
+          <span class="merch-price">$6.00</span>
+        </div>
+      </a>
+
     </div>
+
+    <a class="merch-view-all" href="https://matt-mueller-band.printify.me/" target="_blank" rel="noopener">
+      View Full Store <i class="fas fa-arrow-right"></i>
+    </a>
   </section>
 
   <!-- Shared Footer -->
@@ -75,43 +107,5 @@
 
   <!-- Site JS -->
   <script src="/js/main.js"></script>
-
-  <!-- Carousel JS -->
-  <script>
-    const track = document.querySelector('.carousel-track');
-    const slides = Array.from(track.children);
-    const nextBtn = document.querySelector('.carousel-btn.next');
-    const prevBtn = document.querySelector('.carousel-btn.prev');
-
-    let index = 0;
-
-    function updateCarousel() {
-      track.style.transform = `translateX(-${index * 100}%)`;
-    }
-
-    nextBtn.addEventListener('click', () => {
-      index = (index + 1) % slides.length;
-      updateCarousel();
-    });
-
-    prevBtn.addEventListener('click', () => {
-      index = (index - 1 + slides.length) % slides.length;
-      updateCarousel();
-    });
-
-    // Mobile swipe support
-    let startX = 0;
-
-    track.addEventListener('touchstart', e => {
-      startX = e.touches[0].clientX;
-    });
-
-    track.addEventListener('touchend', e => {
-      const diff = e.changedTouches[0].clientX - startX;
-      if (diff > 50) prevBtn.click();
-      if (diff < -50) nextBtn.click();
-    });
-  </script>
-
 </body>
 </html>
