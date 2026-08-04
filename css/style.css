@@ -186,6 +186,126 @@ a {
 }
 
 /* =====================
+   ABOUT PAGE (portrait + text layout)
+===================== */
+.about-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.about-portrait {
+  flex: 0 0 280px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.about-portrait img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  transition: transform 0.4s ease, filter 0.3s ease;
+}
+
+.about-portrait:hover img {
+  transform: scale(1.06);
+  filter: brightness(1.05);
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h1 {
+  margin-top: 0;
+}
+
+/* =====================
+   MERCH GRID
+===================== */
+.merch-grid-section h1 {
+  margin-bottom: 10px;
+}
+
+.merch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.merch-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.merch-card:hover {
+  transform: translateY(-6px);
+}
+
+.merch-img-wrap {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #111;
+}
+
+.merch-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease, filter 0.3s ease;
+}
+
+.merch-card:hover .merch-img-wrap img {
+  transform: scale(1.08);
+  filter: brightness(1.08);
+}
+
+.merch-info {
+  padding: 10px 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.merch-name {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.95rem;
+  color: #C0C0C0;
+  transition: color 0.3s ease;
+}
+
+.merch-card:hover .merch-name {
+  color: #5D72A2; /* brand blue */
+}
+
+.merch-price {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.merch-view-all {
+  display: inline-block;
+  margin-top: 24px;
+  font-family: 'Oswald', sans-serif;
+  text-decoration: none;
+  color: #C0C0C0;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.merch-view-all:hover {
+  color: #5D72A2;
+  transform: translateX(4px);
+}
+
+/* =====================
    FOOTER
 ===================== */
 .site-footer {
@@ -259,6 +379,18 @@ p {
   .hero .music-links {
     margin-top: -6px; /* nudge icons up further if still too much space */
   }
+
+  /* About page: stack portrait above text on mobile */
+  .about-section {
+    flex-direction: column;
+  }
+
+  .about-portrait {
+    flex: none;
+    width: 60%;
+    max-width: 260px;
+    margin: 0 auto 20px;
+  }
 }
 @media (max-width: 768px) {
   .hero {
@@ -318,6 +450,12 @@ p {
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 10px;
+  transition: transform 0.4s ease, filter 0.3s ease;
+}
+
+.band-member:hover img {
+  transform: scale(1.06);
+  filter: brightness(1.05);
 }
 /* =====================
    Calendar Section Styling
