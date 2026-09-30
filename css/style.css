@@ -500,6 +500,28 @@ p {
   font-size: 0.95em;
   color: #C0C0C0; /* Silver */
 }
+
+/* =====================
+   TICKET BUTTON (Shows page)
+===================== */
+.ticket-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 22px;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: #5D72A2; /* brand blue */
+  color: #000;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.ticket-btn:hover {
+  background-color: #6f86b8;
+  transform: translateY(-1px);
+}
+
 /* =====================
    CONTACT FORM
 ===================== */
