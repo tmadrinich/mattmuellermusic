@@ -87,11 +87,17 @@
             const title = event.summary || 'Show';
             const location = event.location || 'Location TBD';
 
+            // Ticket link: add "Tickets: https://..." to the event description in Google Calendar
+            const desc = event.description || '';
+            const ticketMatch = desc.match(/Tickets:\s*(?:<a[^>]*>)?(https?:\/\/[^\s"'<>]+)/i);
+            const ticketUrl = ticketMatch ? ticketMatch[1] : null;
+
             return `
               <div class="event-card">
                 <div class="event-title">${title}</div>
                 <div class="event-location">${location}</div>
                 <div class="event-time">${dateStr}, ${startTime} - ${endTime}</div>
+                ${ticketUrl ? `<a href="${ticketUrl}" class="ticket-btn" target="_blank" rel="noopener">Get Tickets</a>` : ''}
               </div>
             `;
           }).join('');
