@@ -893,6 +893,16 @@ p {
   padding: 0 24px 56px;
 }
 
+/* Desktop: fit the hero to the space left under the nav + stream
+   banner (~158px) so the CTAs and icons land on the first screen,
+   and crop the empty sky instead of the band */
+@media (min-width: 769px) {
+  .hero.hero-home {
+    min-height: max(520px, calc(100vh - 158px));
+    background-position: center 70%;
+  }
+}
+
 .hero-name {
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
