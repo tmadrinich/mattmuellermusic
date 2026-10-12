@@ -940,7 +940,7 @@ p {
   max-width: 1000px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .highlight {
@@ -950,6 +950,18 @@ p {
 
 .highlight + .highlight {
   border-left: 1px solid var(--line);
+}
+
+@media (min-width: 769px) and (max-width: 960px) {
+  .highlights-inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .highlight:nth-child(3) {
+    border-left: none;
+  }
+  .highlight:nth-child(n+3) {
+    border-top: 1px solid var(--line);
+  }
 }
 
 .highlight .eyebrow {
