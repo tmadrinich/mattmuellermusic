@@ -233,14 +233,14 @@ h1, h2, h3 {
 }
 
 .about-portrait {
-  flex: 0 0 280px;
+  flex: 0 0 400px;
   overflow: hidden;
   border-radius: 8px;
 }
 
 .about-portrait img {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 3 / 2;
   object-fit: cover;
   border-radius: 8px;
   display: block;
@@ -429,9 +429,14 @@ p {
 
   .about-portrait {
     flex: none;
-    width: 60%;
-    max-width: 260px;
-    margin: 0 auto 20px;
+    width: calc(100% + 60px); /* full bleed past the 30px page gutters */
+    max-width: none;
+    margin: 0 -30px 20px;
+    border-radius: 0;
+  }
+
+  .about-portrait img {
+    border-radius: 0;
   }
 }
 @media (max-width: 768px) {
