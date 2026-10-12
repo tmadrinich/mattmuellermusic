@@ -430,6 +430,25 @@ p {
     align-items: flex-end;
     padding-bottom: 24px;
   }
+
+  /* Home hero on phones: photo on top, streaming icons in a
+     Stage Black band underneath instead of over the image. */
+  .hero.hero-home {
+    aspect-ratio: auto;
+    background-size: 100% auto;     /* full-width photo, pinned to top */
+    background-position: center top;
+    padding-top: calc(66.667% + 24px); /* 3:2 photo height + gap */
+    padding-bottom: 28px;
+  }
+
+  .hero.hero-home::before {
+    height: auto;
+    aspect-ratio: 3 / 2;            /* 30% overlay covers the photo only */
+  }
+
+  .hero.hero-home .music-links {
+    margin-top: 0;
+  }
 }
 
 /* =====================
