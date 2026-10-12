@@ -154,6 +154,19 @@ h1, h2, h3 {
   transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease, filter 0.3s ease;
 }
 
+/* "Listen On" label — only shown on phones, where the icons
+   sit in the black band under the photo */
+.listen-label {
+  display: none;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--lit-blue);   /* small blue text on black */
+  margin-bottom: 12px;
+}
+
 /* Subtle Glow Version */
 .hero .music-links .spotify-link:hover i {
   color: #1DB954; /* Spotify green */
@@ -448,6 +461,10 @@ p {
 
   .hero.hero-home .music-links {
     margin-top: 0;
+  }
+
+  .hero.hero-home .listen-label {
+    display: block;
   }
 }
 
