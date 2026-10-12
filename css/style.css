@@ -758,13 +758,11 @@ p {
   position: relative;
 }
 
-.hero-media::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0,0,0,0.3); /* overlay same as home page */
-  z-index: 0;
+/* No overlay on Media and Merch heroes: they carry no text,
+   so the 30% tint (meant for headline legibility) isn't needed */
+.hero-media::before,
+.hero-merch::before {
+  content: none;
 }
 
 .hero-media .hero-content {
