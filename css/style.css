@@ -729,3 +729,28 @@ p {
   font-size: 1.5rem; /* similar to home page subtitle */
   text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
 }
+
+/* Media hero on phones: fit the screen width like the home hero.
+   Without this, min-height: 100vh + the 3:2 aspect ratio forces the
+   hero (and the whole page) about 1200px wide. */
+@media (max-width: 768px) {
+  .hero-media {
+    min-height: 0;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+    padding-bottom: 0;
+  }
+
+  .hero-media .hero-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 4px;
+  }
+
+  .hero-media .hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+  }
+}
