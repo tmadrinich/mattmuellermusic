@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch((err) => console.error("Error loading footer:", err));
 
   initCarousel();
+  initBookingForm();
 });
 
 // =====================
@@ -81,6 +82,8 @@ function initLinkFade() {
 
       // Ignore external, anchor, or empty links
       if (!href || href.startsWith("http") || href.startsWith("#")) return;
+      // Let file downloads (press photos) work normally
+      if (this.hasAttribute("download")) return;
 
       e.preventDefault();
 
@@ -131,5 +134,56 @@ function initCarousel() {
     const diff = e.changedTouches[0].clientX - startX;
     if (diff > 50) prevBtn.click();
     if (diff < -50) nextBtn.click();
+  });
+}
+
+// =====================
+// Booking Inquiry Form (StaticForms, fetch, no redirect)
+// Every detail is folded into the message body so it always
+// arrives in the email, whatever StaticForms does with extra fields.
+// =====================
+function initBookingForm() {
+  const form = document.getElementById("booking-form");
+  if (!form) return;
+
+  const success = document.getElementById("booking-success");
+  const button = form.querySelector("button[type='submit']");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+
+    const lines = [];
+    form.querySelectorAll("[data-field]").forEach((field) => {
+      const value = field.value.trim();
+      lines.push(field.dataset.field + ": " + (value || "-"));
+    });
+
+    form.elements["message"].value =
+      "New booking inquiry from mattmuellermusic.com\n\n" +
+      "Name: " + form.elements["name"].value.trim() + "\n" +
+      "Email: " + form.elements["email"].value.trim() + "\n" +
+      lines.join("\n");
+    form.elements["replyTo"].value = form.elements["email"].value.trim();
+
+    button.disabled = true;
+    button.textContent = "Sending...";
+
+    fetch("https://api.staticforms.xyz/submit", {
+      method: "POST",
+      body: new FormData(form),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data && data.success === false) throw new Error(data.message || "Submit failed");
+        form.style.display = "none";
+        success.style.display = "block";
+      })
+      .catch((err) => {
+        console.error("Booking form error:", err);
+        button.disabled = false;
+        button.textContent = "Send Inquiry";
+        alert("Something went wrong. Please email contact@mattmuellermusic.com.");
+      });
   });
 }

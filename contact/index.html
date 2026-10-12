@@ -4,6 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Matt Mueller | Contact</title>
+  <meta name="description" content="Contact Matt Mueller. For booking, use the booking inquiry form or email contact@mattmuellermusic.com.">
+  <link rel="canonical" href="https://mattmuellermusic.com/contact/">
+
+  <!-- Link previews -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Matt Mueller">
+  <meta property="og:title" content="Matt Mueller | Contact">
+  <meta property="og:description" content="Contact Matt Mueller. For booking, use the booking inquiry form or email contact@mattmuellermusic.com.">
+  <meta property="og:url" content="https://mattmuellermusic.com/contact/">
+  <meta property="og:image" content="https://mattmuellermusic.com/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/assets/favicon.png">
@@ -44,6 +57,8 @@
   <!-- Page Content -->
   <section class="page-content">
     <h1>Contact</h1>
+    <p class="contact-email"><strong>Booking a show?</strong> Use the <a href="/booking">booking inquiry form</a> so we get your date, venue, and format up front.</p>
+    <p class="contact-email">Everything else: send a note below or email <a href="mailto:contact@mattmuellermusic.com">contact@mattmuellermusic.com</a>.</p>
 
     <form id="contact-form">
       <!-- StaticForms API Key -->
@@ -51,6 +66,7 @@
 
       <!-- Disable captcha -->
       <input type="hidden" name="captcha" value="false">
+      <input type="hidden" name="subject" value="New message: mattmuellermusic.com">
 
       <!-- Honeypot spam protection -->
       <input type="text" name="honeypot" style="display:none">
@@ -101,6 +117,7 @@
       })
       .then(res => res.json())
       .then(data => {
+        if (data && data.success === false) throw new Error(data.message || 'Submit failed');
         // Hide form
         form.style.display = 'none';
         // Show thank you

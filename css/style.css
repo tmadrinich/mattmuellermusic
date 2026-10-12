@@ -808,3 +808,611 @@ p {
     margin-bottom: 0;
   }
 }
+
+/* =====================================================
+   BOOKING UPGRADE (2026-10-12)
+   Buttons, nav CTA, home hero copy, highlights,
+   format cards, booking/EPK page, press photos
+===================================================== */
+
+/* ---------- Buttons (brand guide: Brand Blue CTAs, Lit Blue hover) ---------- */
+.btn {
+  display: inline-block;
+  padding: 13px 26px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  border: 2px solid var(--brand-blue);
+  background-color: var(--brand-blue);
+  color: var(--stage-black);
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--lit-blue);
+  border-color: var(--lit-blue);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border-color: var(--brand-silver);
+  color: var(--brand-silver);
+}
+
+.btn-outline:hover {
+  background-color: transparent;
+  border-color: var(--lit-blue);
+  color: var(--lit-blue);
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+/* ---------- Nav: "Book" as a call to action ---------- */
+.nav-links {
+  align-items: center;
+}
+
+.nav-links a.nav-cta {
+  padding: 6px 16px;
+  border-radius: 6px;
+  background-color: var(--brand-blue);
+  color: var(--stage-black);
+}
+
+.nav-links a.nav-cta:hover,
+.nav-links a.nav-cta.active {
+  background-color: var(--lit-blue);
+  color: var(--stage-black);
+}
+
+/* ---------- Small section label (Lit Blue = small blue text on black) ---------- */
+.eyebrow {
+  display: block;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--lit-blue);
+  margin-bottom: 10px;
+}
+
+/* ---------- Home hero: name, tagline, CTAs ---------- */
+.hero.hero-home {
+  align-items: flex-end;
+  padding: 0 24px 56px;
+}
+
+.hero-name {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: 1;
+  letter-spacing: 1px;
+  color: #FFFFFF;                 /* Hero White: over photos only */
+}
+
+.hero-tagline {
+  font-size: 1.15rem;
+  color: #FFFFFF;
+  margin: 14px auto 26px;
+  max-width: 680px;
+}
+
+.hero-home .music-links {
+  margin-top: 30px;
+}
+
+.hero-home .music-links i {
+  font-size: 44px;
+}
+
+.hero-home .hero-name,
+.hero-home .hero-tagline {
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+.section h2,
+.format-card h3,
+.shows-cta h2,
+.form-success h3 {
+  line-height: 1.15;
+}
+
+/* ---------- Highlights strip ---------- */
+.highlights {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.highlights-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.highlight {
+  padding: 34px 20px;
+  text-align: center;
+}
+
+.highlight + .highlight {
+  border-left: 1px solid var(--line);
+}
+
+.highlight .eyebrow {
+  margin-bottom: 6px;
+}
+
+.highlight-title {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.35rem;
+  line-height: 1.25;
+  color: var(--brand-silver);
+}
+
+/* ---------- Generic content section ---------- */
+.section {
+  padding: 80px 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  font-size: 2.2rem;
+  color: var(--brand-blue);       /* section headers on dark */
+  margin-bottom: 14px;
+}
+
+.section-intro {
+  max-width: 640px;
+}
+
+.section-center {
+  text-align: center;
+}
+
+.section-center .section-intro {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---------- Format cards (Solo / Full band) ---------- */
+.format-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin: 34px 0;
+  text-align: left;
+}
+
+.format-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 30px 28px;
+}
+
+.format-card h3 {
+  font-size: 1.6rem;
+  color: var(--brand-silver);
+  margin-bottom: 4px;
+}
+
+.format-card .billing {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.95rem;
+  color: var(--lit-blue);
+  margin-bottom: 16px;
+}
+
+.format-card ul {
+  list-style: none;
+  margin-top: 6px;
+}
+
+.format-card li {
+  padding: 8px 0;
+  border-top: 1px solid var(--line);
+  color: var(--brand-silver);
+}
+
+.format-card li:first-child {
+  border-top: none;
+}
+
+/* ---------- Booking page hero ---------- */
+.hero.hero-booking {
+  background-image: url("/assets/booking-hero.jpg");
+  background-position: center;
+  min-height: 72vh;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 60px 8vw;
+}
+
+.hero-booking .hero-content {
+  max-width: 520px;
+}
+
+.hero-booking h1 {
+  font-size: clamp(2.8rem, 6vw, 4.6rem);
+  line-height: 1.02;
+  color: #FFFFFF;
+  margin-bottom: 16px;
+}
+
+.hero-booking .hero-tagline {
+  margin: 0 0 26px;
+}
+
+.hero-booking .btn-row {
+  justify-content: flex-start;
+}
+
+/* ---------- Pitch (text + photo) ---------- */
+.pitch {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.pitch img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+.pitch p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Single embed ---------- */
+.single-embed {
+  max-width: 640px;
+  margin: 28px auto 18px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.single-embed iframe {
+  width: 100%;
+  height: 152px;
+  border: none;
+  display: block;
+}
+
+.text-link {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--brand-silver);
+  transition: color 0.3s ease;
+}
+
+.text-link:hover {
+  color: var(--lit-blue);
+}
+
+/* ---------- Press photos ---------- */
+.press-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.press-item {
+  display: block;
+}
+
+.press-item .press-img {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.press-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.press-item:hover img {
+  transform: scale(1.06);
+}
+
+.press-item span {
+  display: block;
+  margin-top: 8px;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  color: var(--brand-silver);
+  transition: color 0.3s ease;
+}
+
+.press-item:hover span {
+  color: var(--lit-blue);
+}
+
+.press-item span i {
+  margin-right: 6px;
+}
+
+/* ---------- Booking form ---------- */
+.booking-form-section {
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.booking-form-section .section {
+  max-width: 760px;
+}
+
+.page-content form.booking-form,
+.booking-form {
+  max-width: none;
+  margin: 30px 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 20px;
+}
+
+.booking-form label {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  color: var(--brand-silver);
+}
+
+.booking-form .full {
+  grid-column: 1 / -1;
+}
+
+.booking-form .optional {
+  color: var(--monogram-gray);
+  text-transform: none;
+  letter-spacing: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  margin-top: 8px;
+  padding: 12px 14px;
+  background-color: var(--stage-black);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--brand-silver);
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.booking-form input[type="date"] {
+  color-scheme: dark;
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+  outline: none;
+  border-color: var(--brand-blue);  /* form focus = Brand Blue */
+}
+
+.booking-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.booking-form .btn {
+  justify-self: start;
+}
+
+.form-note {
+  font-size: 0.95rem;
+  color: var(--monogram-gray);
+  margin-top: 18px;
+  margin-bottom: 0;
+}
+
+.form-note a,
+.contact-email a {
+  color: var(--brand-silver);
+  border-bottom: 1px solid var(--line);
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.form-note a:hover,
+.contact-email a:hover {
+  color: var(--lit-blue);
+  border-color: var(--lit-blue);
+}
+
+.form-success {
+  display: none;
+  margin-top: 30px;
+  padding: 28px;
+  border: 1px solid var(--brand-blue);
+  border-radius: 8px;
+}
+
+.form-success h3 {
+  color: var(--brand-blue);
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+
+.form-success p {
+  margin-bottom: 0;
+}
+
+/* ---------- Shows page additions ---------- */
+.shows-cta {
+  margin-top: 50px;
+  padding: 30px 28px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.shows-cta h2 {
+  font-size: 1.6rem;
+  color: var(--brand-blue);
+  margin-bottom: 8px;
+}
+
+.past-list {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.past-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--brand-silver);
+}
+
+/* ---------- About CTA + contact email ---------- */
+.about-cta {
+  flex: 0 0 100%;
+}
+
+.contact-email {
+  margin-top: 6px;
+}
+
+.footer-booking {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.footer-booking a {
+  color: var(--brand-silver);
+  transition: color 0.3s ease;
+}
+
+.footer-booking a:hover {
+  color: var(--lit-blue);
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 768px) {
+  .nav-links a.nav-cta {
+    text-align: center;
+    margin-top: 6px;
+  }
+
+  /* Home: copy and icons sit in the Stage Black band under the photo */
+  .hero.hero-home {
+    /* re-assert the phone layout: 3:2 photo height + gap above the copy */
+    padding: calc(66.667% + 24px) 20px 32px;
+  }
+
+  .hero-home .hero-name {
+    font-size: 2.8rem;
+    color: var(--brand-silver);   /* on black, not over the photo */
+    text-shadow: none;
+  }
+
+  .hero-home .hero-tagline {
+    font-size: 1rem;
+    color: var(--brand-silver);
+    text-shadow: none;
+    margin: 10px auto 20px;
+  }
+
+  .hero-home .listen-label {
+    margin-top: 26px;
+  }
+
+  .highlights-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .highlight {
+    padding: 22px 20px;
+  }
+
+  .highlight + .highlight {
+    border-left: none;
+    border-top: 1px solid var(--line);
+  }
+
+  .section {
+    padding: 60px 20px;
+  }
+
+  .format-grid,
+  .pitch {
+    grid-template-columns: 1fr;
+  }
+
+  .pitch {
+    gap: 28px;
+  }
+
+  /* Booking hero: photo on top, copy on black underneath */
+  .hero.hero-booking {
+    background-size: 100% auto;
+    background-position: center top;
+    background-color: var(--stage-black);
+    aspect-ratio: auto;
+    min-height: 0;
+    padding: calc(66.78% + 24px) 20px 36px;
+    align-items: flex-start;
+  }
+
+  /* No text sits on the photo on phones, so no overlay is needed */
+  .hero.hero-booking::before {
+    content: none;
+  }
+
+  .hero-booking h1 {
+    font-size: 2.6rem;
+    color: var(--brand-silver);
+  }
+
+  .hero-booking .hero-tagline {
+    color: var(--brand-silver);
+  }
+
+  .booking-form {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-form .btn {
+    justify-self: stretch;
+    text-align: center;
+  }
+}
