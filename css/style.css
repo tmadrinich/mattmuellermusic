@@ -1416,3 +1416,68 @@ p {
     text-align: center;
   }
 }
+
+/* =====================================================
+   MEDIA PAGE: photo as full-page background, cards over it
+   (fixed layer instead of background-attachment: fixed,
+   which iOS Safari ignores)
+===================================================== */
+.media-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: url("/assets/hero2.jpg?v=3") 40% center / cover no-repeat;
+}
+
+.media-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);   /* brand overlay: 30% over photos */
+}
+
+.media-stack {
+  padding: 58vh 20px 80px;          /* let the photo read before the cards arrive */
+}
+
+.media-page .page-content.media-card {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 40px 34px;
+  background: rgba(17, 17, 17, 0.92); /* Surface #111 */
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.media-page .media-card + .media-card {
+  margin-top: 32px;
+}
+
+.media-page .media-card h1 {
+  margin-bottom: 0;
+}
+
+.media-page .media-card .embed-wrapper,
+.media-page .media-card .carousel {
+  margin: 24px auto 0;
+}
+
+.media-page .site-footer {
+  background: var(--stage-black);
+}
+
+@media (max-width: 768px) {
+  .media-stack {
+    padding: 52vh 14px 56px;
+  }
+
+  .media-page .page-content.media-card {
+    padding: 26px 18px 22px;
+  }
+
+  .media-page .media-card h1 {
+    font-size: 2rem;
+  }
+}

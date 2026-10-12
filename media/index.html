@@ -35,17 +35,18 @@
   <!-- Site Styles -->
   <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
+<body class="media-page">
 
   <!-- Shared Header -->
   <div id="site-header"></div>
 
-  <!-- Hero Section -->
-  <section class="hero hero-media">
-  </section>
+  <!-- Full-page background photo (fixed; cards scroll over it) -->
+  <div class="media-bg" aria-hidden="true"></div>
+
+  <main class="media-stack">
 
   <!-- Latest Releases -->
-<section class="page-content latest-releases">
+<section class="page-content media-card latest-releases">
   <h1>Latest Releases</h1>
   <div class="embed-wrapper">
     <iframe
@@ -58,7 +59,7 @@
 
 
   <!-- Photos Carousel -->
-  <section class="page-content photos-carousel">
+  <section class="page-content media-card photos-carousel">
     <h1>Photos</h1>
     <div class="carousel">
       <button class="carousel-btn prev" aria-label="Previous">
@@ -78,6 +79,7 @@
       </button>
     </div>
   </section>
+  </main>
 
   <!-- Shared Footer -->
   <div id="site-footer"></div>
