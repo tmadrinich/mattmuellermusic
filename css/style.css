@@ -228,8 +228,9 @@ h1, h2, h3 {
 ===================== */
 .about-section {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
-  gap: 40px;
+  gap: 32px 40px;
 }
 
 .about-portrait {
@@ -254,6 +255,19 @@ h1, h2, h3 {
 
 .about-text {
   flex: 1;
+}
+
+/* Remaining bio paragraphs run full width below the photo */
+.about-more {
+  flex: 0 0 100%;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+.about-more p:first-child {
+  margin-top: 0;
 }
 
 .about-text h1 {
@@ -425,6 +439,7 @@ p {
   /* About page: stack portrait above text on mobile */
   .about-section {
     flex-direction: column;
+    row-gap: 20px; /* match paragraph spacing so the bio reads as one block */
   }
 
   .about-portrait {
