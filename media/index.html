@@ -6,11 +6,11 @@
   <title>Matt Mueller | Media</title>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="/assets/mattmuellerlogo.png">
-  <link rel="shortcut icon" type="image/png" href="/assets/mattmuellerlogo.png">
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="shortcut icon" type="image/png" href="/assets/favicon.png">
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Lato&family=Oswald&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- Icons -->
   <link
@@ -76,42 +76,6 @@
   <!-- Site JS -->
   <script src="/js/main.js"></script>
 
-  <!-- Carousel JS -->
-  <script>
-    const track = document.querySelector('.carousel-track');
-    const slides = Array.from(track.children);
-    const nextBtn = document.querySelector('.carousel-btn.next');
-    const prevBtn = document.querySelector('.carousel-btn.prev');
-
-    let index = 0;
-
-    function updateCarousel() {
-      track.style.transform = `translateX(-${index * 100}%)`;
-    }
-
-    nextBtn.addEventListener('click', () => {
-      index = (index + 1) % slides.length;
-      updateCarousel();
-    });
-
-    prevBtn.addEventListener('click', () => {
-      index = (index - 1 + slides.length) % slides.length;
-      updateCarousel();
-    });
-
-    // Mobile swipe support
-    let startX = 0;
-
-    track.addEventListener('touchstart', e => {
-      startX = e.touches[0].clientX;
-    });
-
-    track.addEventListener('touchend', e => {
-      const diff = e.changedTouches[0].clientX - startX;
-      if (diff > 50) prevBtn.click();
-      if (diff < -50) nextBtn.click();
-    });
-  </script>
 
 </body>
 </html>
