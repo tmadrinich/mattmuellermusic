@@ -1418,29 +1418,35 @@ p {
 }
 
 /* =====================================================
-   MEDIA PAGE: photo as full-page background, cards over it
+   PHOTO BACKGROUND PAGES (Media, Merch): photo as full-page
+   background, cards over it
    (fixed layer instead of background-attachment: fixed,
    which iOS Safari ignores)
 ===================================================== */
-.media-bg {
+.page-bg {
   position: fixed;
   inset: 0;
   z-index: -1;
   background: url("/assets/hero2.jpg?v=3") 40% center / cover no-repeat;
 }
 
-.media-bg::after {
+.merch-page .page-bg {
+  background-image: url("/assets/MMATGP.jpg");
+  background-position: center;
+}
+
+.page-bg::after {
   content: "";
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.3);   /* brand overlay: 30% over photos */
 }
 
-.media-stack {
+.card-stack {
   padding: 58vh 20px 80px;          /* let the photo read before the cards arrive */
 }
 
-.media-page .page-content.media-card {
+.bg-page .page-content.bg-card {
   max-width: 900px;
   margin: 0 auto;
   padding: 40px 40px 34px;
@@ -1451,33 +1457,38 @@ p {
   -webkit-backdrop-filter: blur(6px);
 }
 
-.media-page .media-card + .media-card {
+.bg-page .bg-card + .bg-card {
   margin-top: 32px;
 }
 
-.media-page .media-card h1 {
+.bg-page .bg-card h1 {
   margin-bottom: 0;
 }
 
-.media-page .media-card .embed-wrapper,
-.media-page .media-card .carousel {
+.bg-page .bg-card .embed-wrapper,
+.bg-page .bg-card .carousel {
   margin: 24px auto 0;
 }
 
-.media-page .site-footer {
+.bg-page .site-footer {
   background: var(--stage-black);
 }
 
 @media (max-width: 768px) {
-  .media-stack {
+  .card-stack {
     padding: 52vh 14px 56px;
   }
 
-  .media-page .page-content.media-card {
+  .bg-page .page-content.bg-card {
     padding: 26px 18px 22px;
   }
 
-  .media-page .media-card h1 {
+  .bg-page .bg-card h1 {
     font-size: 2rem;
   }
+}
+
+/* Merch: card spacing for the grid + store link */
+.bg-page .merch-grid-section h1 {
+  margin-bottom: 0;
 }

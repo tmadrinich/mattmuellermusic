@@ -31,16 +31,17 @@
   <!-- Site Styles -->
   <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
+<body class="bg-page merch-page">
   <!-- Shared Header -->
   <div id="site-header"></div>
 
-  <!-- Hero Section -->
-  <section class="hero hero-merch">
-  </section>
+  <!-- Full-page background photo (fixed; cards scroll over it) -->
+  <div class="page-bg" aria-hidden="true"></div>
+
+  <main class="card-stack">
 
   <!-- Merch Grid -->
-  <section class="page-content merch-grid-section">
+  <section class="page-content bg-card merch-grid-section">
     <h1>Shop</h1>
     <div class="merch-grid">
 
@@ -110,6 +111,7 @@
       View Full Store <i class="fas fa-arrow-right"></i>
     </a>
   </section>
+  </main>
 
   <!-- Shared Footer -->
   <div id="site-footer"></div>
