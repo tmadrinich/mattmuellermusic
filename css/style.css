@@ -899,7 +899,7 @@ p {
 @media (min-width: 769px) {
   .hero.hero-home {
     min-height: max(520px, calc(100vh - 158px));
-    background-position: center 70%;
+    background-position: center 30%;   /* anchor high so heads stay in frame on wide, short screens */
   }
 }
 
@@ -1520,7 +1520,7 @@ p {
 ===================== */
 .hero.hero-booking.hero-epk {
   background-image: url("/assets/matt-denim.jpg");
-  background-position: 75% center;
+  background-position: 75% top;   /* keep the cap in frame; crop from the jeans up */
 }
 
 /* White wall behind Matt: darken the text side so Hero White reads */
