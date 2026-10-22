@@ -1514,3 +1514,244 @@ p {
 .bg-page .merch-grid-section h1 {
   margin-bottom: 0;
 }
+
+/* =====================
+   EPK PAGE (/epk)
+===================== */
+.hero.hero-booking.hero-epk {
+  background-image: url("/assets/matt-denim.jpg");
+  background-position: 75% center;
+}
+
+/* White wall behind Matt: darken the text side so Hero White reads */
+.hero.hero-epk::before {
+  background: linear-gradient(90deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0.1) 75%);
+}
+
+.hero-epk .hero-content {
+  max-width: 560px;
+}
+
+.epk-billing {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.95rem;
+  color: var(--brand-silver);
+  margin: -10px 0 26px;
+}
+
+/* Copy-ready bios */
+.epk-copy-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.epk-copy {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 22px 24px;
+}
+
+.epk-copy-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.epk-copy h3 {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  font-size: 1.15rem;
+  letter-spacing: 1px;
+  color: var(--brand-silver);
+}
+
+.epk-copy p {
+  font-size: 0.95rem;
+}
+
+.epk-copy-btn {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+  background: transparent;
+  color: var(--brand-silver);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.epk-copy-btn:hover {
+  border-color: var(--lit-blue);
+  color: var(--lit-blue);
+}
+
+/* Music */
+.epk-music {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+  margin-top: 24px;
+}
+
+.epk-music .single-embed {
+  margin: 0;
+  max-width: none;
+}
+
+.epk-list {
+  list-style: none;
+  margin-bottom: 24px;
+}
+
+.epk-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 1.15rem;
+  color: var(--brand-silver);
+}
+
+.epk-list li span {
+  font-family: 'Lato', sans-serif;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.85rem;
+  color: var(--monogram-gray);
+}
+
+.epk-platforms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.epk-platforms a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  color: var(--brand-silver);
+  text-decoration: none;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 10px 14px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.epk-platforms a:hover {
+  border-color: var(--brand-blue);
+  color: #FFFFFF;
+}
+
+/* Notable stages */
+.epk-stages {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--line);
+}
+
+.epk-stages div {
+  padding: 16px 16px 16px 0;
+  border-bottom: 1px solid var(--line);
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.25;
+  color: var(--brand-silver);
+}
+
+.epk-stages div span {
+  display: block;
+  font-family: 'Lato', sans-serif;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.8rem;
+  color: var(--monogram-gray);
+  margin-top: 3px;
+}
+
+/* Contact */
+.epk-contact {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: end;
+  margin-top: 10px;
+}
+
+.epk-email {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  color: #FFFFFF;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+  user-select: all;
+}
+
+.epk-rep {
+  color: var(--monogram-gray);
+  margin: 8px 0 16px;
+}
+
+.epk-socials {
+  display: flex;
+  gap: 18px;
+}
+
+.epk-socials a {
+  color: var(--brand-silver);
+  font-size: 1.4rem;
+  transition: color 0.2s ease;
+}
+
+.epk-socials a:hover {
+  color: var(--lit-blue);
+}
+
+.epk-contact .btn-row {
+  justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+  .hero.hero-booking.hero-epk {
+    background-position: center top;
+  }
+
+  .hero-epk .epk-billing {
+    color: var(--monogram-gray);
+    margin-top: -14px;
+  }
+
+  .epk-copy-grid,
+  .epk-music,
+  .epk-contact {
+    grid-template-columns: 1fr;
+  }
+
+  .epk-stages {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .epk-contact .btn-row {
+    justify-content: flex-start;
+  }
+}
