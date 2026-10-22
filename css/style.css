@@ -899,7 +899,11 @@ p {
 @media (min-width: 769px) {
   .hero.hero-home {
     min-height: max(520px, calc(100vh - 158px));
-    background-position: center 30%;   /* anchor high so heads stay in frame on wide, short screens */
+    /* Crop the sky down to just above the caps (~22% of the photo's height),
+       so faces sit at the top and the name/CTAs land over the shirts.
+       Photo is 2560x1709, so its rendered height is 66.76vw. Never crop past
+       the bottom of the photo, and never push it down. */
+    background-position: center min(0px, max(-14.7vw, calc(max(520px, 100vh - 158px) - 66.76vw)));
   }
 }
 
