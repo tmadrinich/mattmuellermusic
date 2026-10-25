@@ -1613,6 +1613,11 @@ p {
   max-width: none;
 }
 
+/* Artist player: shows Spotify's Popular tracks list */
+.single-embed.artist-embed iframe {
+  height: 352px;
+}
+
 .epk-list {
   list-style: none;
   margin-bottom: 24px;
