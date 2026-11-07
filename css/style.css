@@ -1618,6 +1618,33 @@ p {
   height: 352px;
 }
 
+/* Live video: responsive 16:9 YouTube embed */
+.epk-video {
+  max-width: 900px;
+  margin: 24px auto 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #111111;
+}
+
+.epk-video iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+}
+
+.epk-video-caption {
+  max-width: 900px;
+  margin: 14px auto 0;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  color: #9C9DA1;
+  text-align: center;
+}
+
 .epk-list {
   list-style: none;
   margin-bottom: 24px;
